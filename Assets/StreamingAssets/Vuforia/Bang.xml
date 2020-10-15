@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="WellsFargo_card_Heart3" size="1.000000 1.596825" />
+    <ImageTarget name="Volcanic_card_Spa10" size="1.000000 1.611465" />
+    <ImageTarget name="Saloon_card_Heart5" size="1.000000 1.584127" />
+    <ImageTarget name="Rirra_card_Heart10" size="1.000000 1.613419" />
+    <ImageTarget name="Panico_card_HeartA" size="1.000000 1.610224" />
+    <ImageTarget name="Mancato_card_Spa5" size="1.000000 1.603175" />
+    <ImageTarget name="Indiani_card_DiaA" size="1.000000 1.582278" />
+    <ImageTarget name="Gatling_card_Heart10" size="1.000000 1.600000" />
+    <ImageTarget name="Emporio_card" size="1.000000 1.414545" />
+    <ImageTarget name="Diligenza_card_Spa9" size="1.000000 1.600000" />
+    <ImageTarget name="CatBalou_card_DiaJ" size="1.000000 1.596825" />
+    <ImageTarget name="Bang_card_DiaK" size="1.000000 1.587302" />
+    <ImageTarget name="Bang_card_DiaA" size="1.000000 1.414545" />
+    <ImageTarget name="Bang_card_Dia7" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_WILLYTHEKID" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_VULTURESAM" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_SUZYLAFAYETTE" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_SLABTHEKILLER" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_SIDKETCHUM" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_ROSEDOOLAN" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_PEDRORAMIREZ" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_PAULREGRET" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_LUCKYDUKE" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_KITCARLSON" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_JOURDONNAIS" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_JESSEJONES" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_ELGRINGO" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_CALAMITYJANEY" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_BLACKJACK" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_BARTCASSIDY" size="1.000000 1.414545" />
+    <ImageTarget name="Exersize" size="1.000000 0.706941" />
+    <ImageTarget name="jobcard_behid" size="1.000000 1.414545" />
+    <ImageTarget name="character_card_behind" size="1.000000 1.414545" />
+    <ImageTarget name="boardmap7" size="1.000000 0.706941" />
+    <ImageTarget name="boardmap6" size="1.000000 0.706941" />
+    <ImageTarget name="boardmap5" size="1.000000 0.706941" />
+    <ImageTarget name="boardmap4" size="1.000000 0.706941" />
+    <ImageTarget name="boardmap3" size="1.000000 0.706941" />
+    <ImageTarget name="boardmap2" size="1.000000 0.706941" />
+    <ImageTarget name="boardmap1" size="1.000000 0.706941" />
+    <ImageTarget name="Winchester_card_Spa8" size="1.000000 1.598726" />
+    <ImageTarget name="Schofield_card_ClovJ" size="1.000000 1.609677" />
+    <ImageTarget name="Remington_card_ClovK" size="1.000000 1.578616" />
+    <ImageTarget name="Prigione_card_Spa10" size="1.000000 1.564815" />
+    <ImageTarget name="Prigione_card_Heart4" size="1.000000 1.600000" />
+    <ImageTarget name="Mustang_card_Heart8" size="1.000000 1.558140" />
+    <ImageTarget name="Mirino_card_SpaA" size="1.000000 1.558140" />
+    <ImageTarget name="Duello_card_SpaJ" size="1.000000 1.575419" />
+    <ImageTarget name="Dinamite_card_Heart2" size="1.000000 1.558140" />
+    <ImageTarget name="Carabine_card_ClovA" size="1.000000 1.610932" />
+    <ImageTarget name="Barile_card_SpaQ" size="1.000000 1.523810" />
+    <ImageTarget name="Vice_Card" size="1.000000 1.537794" />
+    <ImageTarget name="Sceriffo_card" size="1.000000 1.590769" />
+    <ImageTarget name="Rinnegato_card" size="1.000000 1.573727" />
+    <ImageTarget name="Fuorilegge_card" size="1.000000 1.574879" />
+    <ImageTarget name="BANG_intro" size="1.000000 1.384899" />
+  </Tracking>
+</QCARConfig>
