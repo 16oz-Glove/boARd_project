@@ -6,7 +6,7 @@
   <string name="project_id" translatable="false">test-board-1158b</string>
   <string name="google_api_key" translatable="false">AIzaSyAddcNaKdz9_8ONiVT8YjDzUfQmgpCoS7I</string>
   <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAddcNaKdz9_8ONiVT8YjDzUfQmgpCoS7I</string>
-  <string name="google_app_id" translatable="false">1:199444937305:android:064d42bf1a712962fd8f48</string>
-  <string name="default_android_client_id" translatable="false">199444937305-gk75jtpscgp308ionuk33e5iqrm3fecr.apps.googleusercontent.com</string>
+  <string name="google_app_id" translatable="false">1:199444937305:android:dbea42eb0c46812ffd8f48</string>
+  <string name="default_android_client_id" translatable="false">199444937305-kblntnng9r783b9ek8j3jasp41ucvprk.apps.googleusercontent.com</string>
   <string name="default_web_client_id" translatable="false">199444937305-kmmum04ja7mgupgltoo9iuj3h0fhr7af.apps.googleusercontent.com</string>
 </resources>
