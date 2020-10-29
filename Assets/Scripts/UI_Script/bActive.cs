@@ -10,13 +10,26 @@ public class bActive : MonoBehaviour
     //버튼 누를시, 오브젝트 비활성화
     public void OnClickButton_unActive()
     {
-        uiPanel.SetActive(false);
+            uiPanel.SetActive(false);
     }
 
     //버튼 누를시, 오브젝트 활성화
     public void OnClickButton_Active()
     {
-        uiPanel.SetActive(true);
+            uiPanel.SetActive(true);
+    }
+
+    public void OnClickButton_all()
+    {
+        //오브젝트가 활성화 되어 있다면
+        if (uiPanel.activeSelf)
+        {
+            uiPanel.SetActive(false);   //비활성화
+        }
+        else
+        { 
+            uiPanel.SetActive(true);    //활성화
+        }
     }
 
 }
