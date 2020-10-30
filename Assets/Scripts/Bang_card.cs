@@ -44,6 +44,7 @@ public class Bang_card : MonoBehaviour
             {
                 if (gDraw == false)
                 {
+                    animator.Play("CubeRotating", -1, 0);   //GUI박스 뜰때 애니메이션 실행
                     gDraw = true;
                 }
                 else
@@ -53,7 +54,7 @@ public class Bang_card : MonoBehaviour
 
                 Debug.Log(hit.collider.gameObject.name);    //로그창에 오브젝트 이름 출력
 
-                animator.Play("CubeRotating", -1, 0);
+                
             }
 
         }

@@ -780,6 +780,7 @@ GameObject:
   - component: {fileID: 1167619129}
   - component: {fileID: 1167619128}
   - component: {fileID: 1167619131}
+  - component: {fileID: 1167619132}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -872,6 +873,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3fa9691481e8b48a4987b49092f14e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchpos: {x: 0, y: 0}
+  animator: {fileID: 0}
+--- !u!95 &1167619132
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167619126}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3331fe50bdd63354fb65cc37e1aa8d83, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!21 &1221998757
 Material:
   serializedVersion: 6
