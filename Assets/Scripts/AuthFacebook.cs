@@ -5,7 +5,7 @@ using Facebook.Unity;
 
 public class AuthFacebook : MonoBehaviour
 {
-    void Awake()
+    void Start()
     {
         // 초기화 확인
         if (!FB.IsInitialized)
