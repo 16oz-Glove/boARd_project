@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class Bang_card : MonoBehaviour
 {
@@ -8,11 +9,13 @@ public class Bang_card : MonoBehaviour
     public Vector2 touchpos;
     string boxContent;
     public Animator animator;
+    public AudioSource source;
 
     // Start is called before the first frame update
     void Start()
     {
         //animator = GetComponent<Animator>();  //public변수이므로 굳이필요X
+        Thread.Sleep(15000);
     }
 
     // Update is called once per frame
@@ -44,6 +47,7 @@ public class Bang_card : MonoBehaviour
             {
                 animator.Play("CubeRotating", -1, 0);   //GUI박스 뜰때 애니메이션 실행
                 gDraw = true;
+                source.Play();
             }
             else
             {
