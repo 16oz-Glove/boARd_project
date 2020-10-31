@@ -85,7 +85,7 @@ public class AuthManager : MonoBehaviour
             {
                 User = task.Result;
                 Debug.Log("Success to Sign-in: " + User.Email);
-                SceneManager.LoadScene("Lobby"); // 로비Secene으로 이동
+                SceneManager.LoadScene("Mainmenu"); // 메인메뉴Secene으로 이동
             }
         });
     }
