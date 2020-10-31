@@ -107,10 +107,29 @@ public class Join : MonoBehaviour
                 return;
             }
 
-            // Firebase
+            // FirebaseAuth에 사용자 이름 등록
             FirebaseUser newUser = task.Result;
-            Debug.LogFormat("Successfully created! Welcome, {0}({1})", newUser.DisplayName, newUser.Email);
+            UpdateUserName(newUser);
         });
     }
 
+    // FirebaseAuth에 사용자 이름 등록
+    public void UpdateUserName(FirebaseUser newUser)
+    {
+        UserProfile profile = new UserProfile { DisplayName = nickNameField.text };
+        newUser.UpdateUserProfileAsync(profile).ContinueWith(task => {
+            if (task.IsCanceled)
+            {
+                Debug.LogError("Setting DisplayName was canceled.");
+                return;
+            }
+            if (task.IsFaulted)
+            {
+                Debug.LogError("Setting DisplayName encountered an error: " + task.Exception);
+                return;
+            }
+
+            Debug.LogFormat("Successfully created. Welcome, {0}({1})!", newUser.DisplayName, newUser.Email);
+        });
+    }
 }
