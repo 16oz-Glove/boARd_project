@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Firebase.Auth;
-using Firebase;
 
 public class Join : MonoBehaviour
 {
@@ -39,6 +38,11 @@ public class Join : MonoBehaviour
         createButton.interactable = false;
         pwCheck_sad.SetActive(false);
         pwCheck_good.SetActive(false);
+
+        emailField.text = "";
+        passwordField.text = "";
+        passwordCheckField.text = "";
+        nickNameField.text = "";
 
         auth = FirebaseAuth.DefaultInstance;
     }
@@ -84,14 +88,17 @@ public class Join : MonoBehaviour
 
     // create 버튼 클릭 시
     public void OnClickCreate()
-        {
-            createButton.interactable = false;
+    {
+        createButton.interactable = false;
 
-            email = emailField.text;
-            password = passwordField.text;
+        email = emailField.text;
+        password = passwordField.text;
 
-            CreateUser();
-        }
+        CreateUser();
+
+        joinPanel.SetActive(false);
+        Debug.LogFormat("11111111");
+    }
 
     void CreateUser()
     {
@@ -107,10 +114,30 @@ public class Join : MonoBehaviour
                 return;
             }
 
-            // Firebase
+            // FirebaseAuth에 사용자 이름 등록
             FirebaseUser newUser = task.Result;
-            Debug.LogFormat("Successfully created! Welcome, {0}({1})", newUser.DisplayName, newUser.Email);
+            UpdateUserName(newUser);
         });
     }
 
+    // FirebaseAuth에 사용자 이름 등록
+    public void UpdateUserName(FirebaseUser newUser)
+    {
+        UserProfile profile = new UserProfile { DisplayName = nickNameField.text };
+        newUser.UpdateUserProfileAsync(profile).ContinueWith(task => {
+            if (task.IsCanceled)
+            {
+                Debug.LogError("Setting DisplayName was canceled.");
+                return;
+            }
+            if (task.IsFaulted)
+            {
+                Debug.LogError("Setting DisplayName encountered an error: " + task.Exception);
+                return;
+            }
+
+            Debug.LogFormat("Successfully created. Welcome, {0}({1})!", newUser.DisplayName, newUser.Email);
+
+        });
+    }
 }
