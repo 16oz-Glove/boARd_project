@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;  //씬 관련 메서드 관리 라이브러�
 
 public class LetsIN : MonoBehaviour
 {
-    bool gDraw = false;
+    //bool gDraw = false;
     public Vector2 touchpos;
-    string boxContent;
+    //string boxContent;
 
     // Update is called once per frame
     void Update()
