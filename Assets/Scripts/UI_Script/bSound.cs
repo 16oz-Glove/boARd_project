@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class bSound : MonoBehaviour
 {
-    new AudioSource audio;
+    AudioSource audio;
+    private bool isbutton = false;
 
     void Start()
     {

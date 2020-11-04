@@ -1988,6 +1988,7 @@ GameObject:
   - component: {fileID: 1169737674}
   - component: {fileID: 1169737676}
   - component: {fileID: 1169737675}
+  - component: {fileID: 1169737677}
   m_Layer: 5
   m_Name: ARStart_sub
   m_TagString: Untagged
@@ -2029,7 +2030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9358491, b: 0.9198113, a: 1}
+  m_Color: {r: 0.082352936, g: 0.8593923, b: 1, a: 0.60784316}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2052,6 +2053,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169737673}
   m_CullTransparentMesh: 0
+--- !u!114 &1169737677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169737673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b8db67128ec6d4f9d16fb099f3066c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ob: {fileID: 1169737673}
+  clear: 155
 --- !u!1 &1212780060
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,6 +2516,7 @@ GameObject:
   - component: {fileID: 1690318089}
   - component: {fileID: 1690318092}
   - component: {fileID: 1690318093}
+  - component: {fileID: 1690318094}
   m_Layer: 5
   m_Name: ARStart_button
   m_TagString: Untagged
@@ -2647,6 +2663,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiPanel: {fileID: 1169737673}
+--- !u!114 &1690318094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690318087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b8db67128ec6d4f9d16fb099f3066c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ob: {fileID: 1690318087}
+  clear: 255
 --- !u!1 &1774397458
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,9 +3098,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1811633883}
   - component: {fileID: 1811633886}
+  - component: {fileID: 1811633885}
   - component: {fileID: 1811633884}
   - component: {fileID: 1811633887}
-  - component: {fileID: 1811633885}
   m_Layer: 5
   m_Name: sound_Bt
   m_TagString: Untagged
