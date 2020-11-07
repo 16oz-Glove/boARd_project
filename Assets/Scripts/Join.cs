@@ -4,8 +4,6 @@ using Firebase.Auth;
 
 public class Join : MonoBehaviour
 {
-    public bool IsCreateOnProgress { get; private set; }
-
     public Button joinButton;
     
     public GameObject joinPanel;
