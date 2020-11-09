@@ -1,60 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.IO;
+using UnityEngine.SceneManagement;
 
-public class TtManager : MonoBehaviour
+
+public class Tt_manager : MonoBehaviour
 {
-    static int count = 0;
-    private Image script_jobcardIMG;
-    //private Text txt;
-    public GameObject txtObject;
+    static int count;
 
     // Start is called before the first frame update
     void Start()
     {
-        txtObject = transform.Find("Text");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    void text_flow()
-    {
-
-        Text txt = txtObject.getComponent<Text>();
-
-        switch (count)
-        {
-            case 0:
-                txt.text = "튜토리얼을 시작합니다";
-                break;
-            case 1:
-                txt.text = "직업카드를 인식시켜 주세요";
-                script_jobcardIMG = GameObject.Find("Image_Jobcard").GetComponent<Image>(); // Image_Jobcard 오브젝트에 연결된 Image 스크립트를 가져온다
-                script_jobcardIMG.enable();  // 스크립트의 enable()함수를 호출한다.
-                break;
-        };
-    }
-
-    public void IncCount() //"다음"버튼 눌렀을때
-    {
-        if (count >= 0)
-        {
-            count += 1;
-            text_flow();
-        }
-    }
-
-    public void DecCount() //"이전"버튼 눌렀을때
-    {
-        if (count > 0)
-        {
-            count -= 1;
-            text_flow();
-        }
+        
     }
 
     //public GameObject[] tutorialPage;
@@ -160,4 +125,5 @@ public class TtManager : MonoBehaviour
     //    Tutorial.SetActive(false);
 
     //}
+
 }
