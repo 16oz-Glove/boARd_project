@@ -6,7 +6,6 @@ using System.Threading;
 public class Bang_card : MonoBehaviour
 {
     bool gDraw = false;
-    public Vector2 touchpos;
     string boxContent;
     public Animator animator;
     public AudioSource source;
