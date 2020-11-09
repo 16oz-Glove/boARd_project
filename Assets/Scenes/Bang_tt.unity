@@ -1108,7 +1108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 765203476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaa0dc74e8eb6754ba9a1a6b57b814f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 038581ebbd1bc4e46bac1ef4f843a9cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &823726706
@@ -2070,6 +2070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3fa9691481e8b48a4987b49092f14e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchpos: {x: 0, y: 0}
   animator: {fileID: 0}
   source: {fileID: 0}
 --- !u!95 &1167619132
