@@ -1,11 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-<<<<<<< Updated upstream
-=======
 using System.Threading;
 using System.Security.Cryptography.X509Certificates;
->>>>>>> Stashed changes
 
 public class Bang_card : MonoBehaviour
 {
@@ -13,17 +10,15 @@ public class Bang_card : MonoBehaviour
     public Vector2 touchpos;
     string boxContent;
     public Animator animator;
-<<<<<<< Updated upstream
-=======
     public GameObject model;
     public AudioSource source;
     public string stateName;
->>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
     {
         //animator = GetComponent<Animator>();  //public변수이므로 굳이필요X
+        Thread.Sleep(15000);
     }
 
     // Update is called once per frame
