@@ -1,6 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< Updated upstream
+=======
+using System.Threading;
+using System.Security.Cryptography.X509Certificates;
+>>>>>>> Stashed changes
 
 public class Bang_card : MonoBehaviour
 {
@@ -8,6 +13,12 @@ public class Bang_card : MonoBehaviour
     public Vector2 touchpos;
     string boxContent;
     public Animator animator;
+<<<<<<< Updated upstream
+=======
+    public GameObject model;
+    public AudioSource source;
+    public string stateName;
+>>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +53,19 @@ public class Bang_card : MonoBehaviour
         {
             if (gDraw == false)
             {
-                animator.Play("CubeRotating", -1, 0);   //GUI박스 뜰때 애니메이션 실행
+                if (hit.collider.name == model.name)
+                {
+                    //animator.Play("CubeRotating", -1, 0);   //GUI박스 뜰때 애니메이션 실행
+                    animator.Play(stateName, -1, 0);
+                    source.Play();
+                }  
+                /*
+                else if (hit.collider.name == "Cube")
+                {
+                    animator.Play("CubeRotating", -1, 0);
+                    playSound("Source1");
+                }
+                */
                 gDraw = true;
             }
             else
@@ -65,5 +88,10 @@ public class Bang_card : MonoBehaviour
             GUI.Box(new Rect(10, 10, 100, 100), boxContent);
         }
     }
-    
+    /*
+    void playSound(string snd)
+    {
+        GameObject.Find(snd).GetComponent<AudioSource>().Play();
+    }
+    */
 }
