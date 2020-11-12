@@ -6,7 +6,6 @@ using System.Threading;
 public class Bang_card : MonoBehaviour
 {
     bool gDraw = false;
-    public Vector2 touchpos;
     string boxContent;
     public Animator animator;
     public AudioSource source;
@@ -60,14 +59,14 @@ public class Bang_card : MonoBehaviour
 
     }
 
-    void OnGUI()
-    {
-        boxContent = "이름\r\n" + gameObject.name;    //오브젝트 이름
+    //void OnGUI()
+    //{
+    //    boxContent = "이름\r\n" + gameObject.name;    //오브젝트 이름
 
-        if (gDraw == true)
-        {
-            GUI.Box(new Rect(10, 10, 100, 100), boxContent);
-        }
-    }
+    //    if (gDraw == true)
+    //    {
+    //        GUI.Box(new Rect(10, 10, 100, 100), boxContent);
+    //    }
+    //}
     
 }
