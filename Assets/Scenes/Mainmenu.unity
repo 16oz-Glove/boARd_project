@@ -1271,7 +1271,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 453293363}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 869532287}
+        m_MethodName: OnClickFriends
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &453293363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2757,10 +2768,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be288530de5e064ca601631c37dc3cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myPagePanel: {fileID: 93826598}
   friendsScroll: {fileID: 609233233}
   logsScroll: {fileID: 522725622}
-  myPagePanel: {fileID: 93826598}
   myLogButton: {fileID: 1638393214}
+  myFriendButton: {fileID: 453293362}
+  friend_prefab: {fileID: 5171921101777540107, guid: 98e29d0211a69dd40a05d2a637dfc400,
+    type: 3}
+  friend_parent: {fileID: 1401265230}
   log_prefab: {fileID: 3864460464899444003, guid: d870aa98ddfbc714c888b4d1f9edf609,
     type: 3}
   log_parent: {fileID: 404121343}
@@ -3787,7 +3802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 7
+    m_Left: 10
     m_Right: 0
     m_Top: 12
     m_Bottom: 0
