@@ -74,7 +74,7 @@ public class AuthManager : MonoBehaviour
 
             if (task.IsFaulted) // 로그인에 실패했을 경우
             {
-                Debug.LogError("Failed to Sign-in: " + task.Exception);
+                Debug.LogError("Fail to Sign-in: " + task.Exception);
                 errorPanel.SetActive(true);
             }
             else if (task.IsCanceled) // 로그인이 취소되었을 경우
@@ -84,7 +84,7 @@ public class AuthManager : MonoBehaviour
             else // 로그인 성공의 경우
             {
                 User = task.Result;
-                Debug.Log("Success to Sign-in: " + User.Email);
+                Debug.Log("Succeed to Sign-in: " + User.Email);
                 SceneManager.LoadScene("Mainmenu"); // 메인메뉴Secene으로 이동
             }
         });
