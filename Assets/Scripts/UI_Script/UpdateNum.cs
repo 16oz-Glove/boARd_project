@@ -56,16 +56,29 @@ public class UpdateNum : MonoBehaviourPunCallbacks
     //사람이 나갔을때
     public override void OnLeftRoom()
     {
-        AllRoomRenewalRPC();
+        if(PhotonNetwork.CurrentRoom.PlayerCount == 0)
+        {
+            return;
+        }else
+        {
+            AllRoomRenewalRPC();
+        }
     }
 
     //연결 끊기
     public void Disconnect()
     {
-        AllRoomRenewalRPC();
         PhotonNetwork.LeaveRoom(); //룸에서 나가고
         PhotonNetwork.Disconnect(); //연결도 끊기
-        SceneManager.LoadScene("ARrecognize_pg");
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            SceneManager.LoadScene("ARrecognize_pg");
+        }else
+        {
+            SceneManager.LoadScene("Mainmenu");
+        }
+
     }
 
     [PunRPC]//RPC는 플레이어가 속해있는 방 모든 인원에게 전달한다

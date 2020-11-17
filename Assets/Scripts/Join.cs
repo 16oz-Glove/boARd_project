@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Firebase;
 using Firebase.Auth;
+using Firebase.Database;
+using Firebase.Unity.Editor;
 
+// (DB manager 없는 버전)
 public class Join : MonoBehaviour
 {
-    public bool IsCreateOnProgress { get; private set; }
-
     public Button joinButton;
-    
+
     public GameObject joinPanel;
     public InputField emailField;
     public InputField passwordField;
@@ -17,8 +19,7 @@ public class Join : MonoBehaviour
     public GameObject pwCheck_good;
     public Button createButton;
 
-    [SerializeField] private string email;
-    [SerializeField] private string password;
+    [SerializeField] private string PW;
 
     FirebaseAuth auth;
 
@@ -91,18 +92,14 @@ public class Join : MonoBehaviour
     {
         createButton.interactable = false;
 
-        email = emailField.text;
-        password = passwordField.text;
-
+        PW = passwordCheckField.text;
         CreateUser();
-
         joinPanel.SetActive(false);
-        Debug.LogFormat("11111111");
     }
 
     void CreateUser()
     {
-        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
+        auth.CreateUserWithEmailAndPasswordAsync(emailField.text, PW).ContinueWith(task => {
             if (task.IsCanceled)
             {
                 Debug.LogError("Sign-up was canceled.");
@@ -117,6 +114,9 @@ public class Join : MonoBehaviour
             // FirebaseAuth에 사용자 이름 등록
             FirebaseUser newUser = task.Result;
             UpdateUserName(newUser);
+
+            // DB에 사용자 데이터 추가
+            AddToDB(newUser);
         });
     }
 
@@ -137,7 +137,22 @@ public class Join : MonoBehaviour
             }
 
             Debug.LogFormat("Successfully created. Welcome, {0}({1})!", newUser.DisplayName, newUser.Email);
-
         });
+    }
+
+    private void AddToDB(FirebaseUser newUser)
+    {
+        // DB 경로 설정 후 인스턴스 초기화
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://test-board-1158b.firebaseio.com/");
+        DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+
+        string time = System.DateTime.Now.ToString("yyyyMMdd HH:mm:ss");
+        NewUser user = new NewUser(newUser.Email, nickNameField.text, time);
+
+        string json = JsonUtility.ToJson(user); // data to json
+        string key = newUser.UserId; // take uid as key value
+        reference.Child("users").Child(key).SetRawJsonValueAsync(json);
+
+        Debug.Log("Succesfully added new user to DB.");
     }
 }

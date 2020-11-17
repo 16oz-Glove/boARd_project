@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - Bullet
+  - BoardGame
   layers:
   - Default
   - TransparentFX
