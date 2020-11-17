@@ -45,13 +45,18 @@ public class UpdateNum : MonoBehaviourPunCallbacks
         AllRoomRenewalRPC();
     }
 
-    /*  오버라이드로 쓰기가 되야되는데, 지금 안되고 있는중...;
+    //오버라이드로 쓰기가 되야되는데, 지금 안되고 있는중...;
     //사람이 입장했을때
-    public void onPlayerEnteredRoom(Player other)
+    public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         RoomRenewal();
     }
-        */
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        RoomRenewal();
+    }
+
 
     //사람이 나갔을때
     public override void OnLeftRoom()
