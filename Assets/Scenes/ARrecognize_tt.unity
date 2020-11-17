@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 181374173}
   m_Layer: 0
   m_Name: Bang_tt
-  m_TagString: Untagged
+  m_TagString: BoardGame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -867,6 +867,7 @@ GameObject:
   m_Component:
   - component: {fileID: 251256576}
   - component: {fileID: 251256575}
+  - component: {fileID: 251256574}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -874,6 +875,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &251256574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251256573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56cef74bc56601144a32ac1d8bb04c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &251256575
 Camera:
   m_ObjectHideFlags: 0
