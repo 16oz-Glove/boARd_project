@@ -36,11 +36,22 @@ public class MyPageTest : MonoBehaviour
 	}
 
 
-	// 프로파일 닫을 때 프리팹 삭제(content오브젝트에 직접 넣어 자식오브젝트로 접근해야할 듯)
-	public void OnClickCloseProfile()
+	// 마이페이지 닫을 때
+	public void OnClickClosePage()
     {
-		// 인스턴스 모두 삭제!
-    }
+		// 내부 프리팹 삭제
+		for (int i = 0; i < log_parent.transform.childCount; i++)
+        {
+			Destroy(log_parent.transform.GetChild(i).gameObject);
+		}
+
+		// 스크롤 비활성화
+		friendsScroll.SetActive(false);
+		logsScroll.SetActive(false);
+
+		myLogButton.interactable = false;
+
+	}
 
 	// 마이로그 버튼 눌렀을 때
 	public void OnClickLogs()
@@ -48,27 +59,30 @@ public class MyPageTest : MonoBehaviour
 		friendsScroll.SetActive(false);
 		logsScroll.SetActive(true);
 		
-		foreach (DataSnapshot data in snapshot.Children)
+		if (log_parent.transform.childCount == 0)
         {
-			GameObject go = Instantiate(log_prefab, transform.position, transform.rotation);
-			go.transform.SetParent(log_parent.transform);
+			foreach (DataSnapshot data in snapshot.Children)
+			{
+				GameObject go = Instantiate(log_prefab, transform.position, transform.rotation);
+				go.transform.SetParent(log_parent.transform);
 			
-			IDictionary logs = (IDictionary)data.Value;
-			string date = logs["date"].ToString().Substring(4, 2) + "/" + logs["date"].ToString().Substring(6, 2) + " ";
-			if (logs["type"].Equals("tt"))
-            {
-				go.GetComponent<Text>().text = date + logs["game"] + "(튜토리얼)";
+				IDictionary logs = (IDictionary)data.Value;
+				string date = logs["date"].ToString().Substring(4, 2) + "/" + logs["date"].ToString().Substring(6, 8) + " ";
+				if (logs["type"].Equals("tt"))
+				{
+					go.GetComponent<Text>().text = date + logs["game"] + "(튜토리얼)";
+				}
+				else if (logs["type"].Equals("pg"))
+				{
+					go.GetComponent<Text>().text = date + logs["game"] + "(연습게임) " + logs["players"];
+				}
+				else
+				{
+					go.GetComponent<Text>().text = date + " " + logs["game"];
+					Debug.Log("Wrong game type in DB");
+				}
 			}
-			else if (logs["type"].Equals("pg"))
-			{
-				go.GetComponent<Text>().text = date + logs["game"] + "(연습게임) " + logs["players"];
-			}
-			else
-			{
-				go.GetComponent<Text>().text = date + " " + logs["game"];
-				Debug.Log("Wrong game type in DB");
-			}
-		}
+        }
 	}
 
 	public void ReadLogsData()
