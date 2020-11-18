@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Prigione_card_Spa10" size="1.000000 1.564815" />
+    <ImageTarget name="Duello_card_SpaJ" size="1.000000 1.575419" />
+    <ImageTarget name="Vice_Card" size="1.000000 1.537794" />
+    <ImageTarget name="Sceriffo_card" size="1.000000 1.590769" />
+    <ImageTarget name="Rinnegato_card" size="1.000000 1.573727" />
+    <ImageTarget name="Fuorilegge_card" size="1.000000 1.574879" />
+    <ImageTarget name="Ch_SUZYLAFAYETTE" size="1.000000 1.414545" />
+    <ImageTarget name="Ch_VULTURESAM" size="1.000000 1.414545" />
+  </Tracking>
+</QCARConfig>
