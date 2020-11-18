@@ -29,6 +29,7 @@ namespace Photon.Pun.UtilityScripts
         public KeyCode ModifierKey;
 
         public GameObject Prefab;
+        public GameObject Model;
 
         [SerializeField]
 		private InstantiateOption InstantiateType = InstantiateOption.Mine;
@@ -51,6 +52,9 @@ namespace Photon.Pun.UtilityScripts
                     PhotonNetwork.InstantiateRoomObject(this.Prefab.name, eventData.pointerCurrentRaycast.worldPosition + new Vector3(0, 0.5f, 0), Quaternion.identity, 0, null);
                     break;
             }
+
+            Prefab.SetActive(false);
+            Model.SetActive(true);
         }
     }
 }

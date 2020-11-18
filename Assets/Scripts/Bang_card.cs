@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
+using System.Security.Cryptography.X509Certificates;
+
 
 public class Bang_card : MonoBehaviour
 {
     bool gDraw = false;
     string boxContent;
     public Animator animator;
+    public GameObject model;
     public AudioSource source;
+    public string stateName;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,9 +49,12 @@ public class Bang_card : MonoBehaviour
         {
             if (gDraw == false)
             {
-                animator.Play("CubeRotating", -1, 0);   //GUI박스 뜰때 애니메이션 실행
+                if (hit.collider.name == model.name)
+                {
+                    animator.Play(stateName, -1, 0);
+                    source.Play();
+                }  
                 gDraw = true;
-                source.Play();
             }
             else
             {
@@ -59,14 +67,13 @@ public class Bang_card : MonoBehaviour
 
     }
 
-    //void OnGUI()
-    //{
-    //    boxContent = "이름\r\n" + gameObject.name;    //오브젝트 이름
+    void OnGUI()
+    {
+        boxContent = "이름\r\n" + gameObject.name;    //오브젝트 이름
 
-    //    if (gDraw == true)
-    //    {
-    //        GUI.Box(new Rect(10, 10, 100, 100), boxContent);
-    //    }
-    //}
-    
+        if (gDraw == true)
+        {
+            GUI.Box(new Rect(10, 10, 100, 100), boxContent);
+        }
+    }
 }
