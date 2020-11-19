@@ -6,12 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Intro1.unity
+    guid: 812df76cf6e54864883e893363056342
+  - enabled: 1
     path: Assets/Scenes/SignIn.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Mainmenu.unity
+    guid: 7af94f1c405871544842c4bcb63a314e
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 5ce8703fe7c114618a557abc1b45f9fb
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: b0386852dc2564f898f29b2caf292ffb
+    path: Assets/Scenes/ARrecognize_tt.unity
+    guid: 814ad92204d2b234c805591fa1fa4bce
+  - enabled: 1
+    path: Assets/Scenes/ARrecognize_pg.unity
+    guid: c7eb9a99dc5b2ea4babce1a95f315e39
+  - enabled: 1
+    path: Assets/Scenes/Bang_tt.unity
+    guid: 96638d57f8558354887aacb4670d539a
+  - enabled: 1
+    path: Assets/Scenes/Bang_pg.unity
+    guid: 6e32d7ffd634a394fa6a38030bdc5b8f
   m_configObjects: {}

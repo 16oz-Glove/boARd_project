@@ -1,0 +1,1939 @@
+fileFormatVersion: 2
+guid: 5e307a0f9f94a094686d12a98bf8ba32
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6588290915118395247
+    second: topdwon_total_0
+  - first:
+      213: -896767229436698105
+    second: topdwon_total_1
+  - first:
+      213: -3446140224295999286
+    second: topdwon_total_2
+  - first:
+      213: -3185318625901922647
+    second: topdwon_total_3
+  - first:
+      213: 2418140467495504616
+    second: topdwon_total_4
+  - first:
+      213: -7915517811937322587
+    second: topdwon_total_5
+  - first:
+      213: 3471256400186998126
+    second: topdwon_total_6
+  - first:
+      213: 2271477226632120314
+    second: topdwon_total_7
+  - first:
+      213: 1391698155615393030
+    second: topdwon_total_8
+  - first:
+      213: -6177338275547810604
+    second: topdwon_total_9
+  - first:
+      213: 8950356223796757499
+    second: topdwon_total_10
+  - first:
+      213: -528641132909562364
+    second: topdwon_total_11
+  - first:
+      213: 4617233367074996503
+    second: topdwon_total_12
+  - first:
+      213: 6842532556574138772
+    second: topdwon_total_13
+  - first:
+      213: 393827932648854694
+    second: topdwon_total_14
+  - first:
+      213: -8652757487202131075
+    second: topdwon_total_15
+  - first:
+      213: -559107707395804225
+    second: topdwon_total_16
+  - first:
+      213: -3238246200164320168
+    second: topdwon_total_17
+  - first:
+      213: -7059631191867492171
+    second: topdwon_total_18
+  - first:
+      213: 963581916297013903
+    second: topdwon_total_19
+  - first:
+      213: -6416153052144563717
+    second: topdwon_total_20
+  - first:
+      213: 8601259455656652037
+    second: topdwon_total_21
+  - first:
+      213: -6559605719626352676
+    second: topdwon_total_22
+  - first:
+      213: 6598431836338575314
+    second: topdwon_total_23
+  - first:
+      213: -4240164483962006259
+    second: topdwon_total_24
+  - first:
+      213: 1617381420622934092
+    second: topdwon_total_25
+  - first:
+      213: -6200371169500014022
+    second: topdwon_total_26
+  - first:
+      213: 6168602108602138794
+    second: topdwon_total_27
+  - first:
+      213: 9154982248137752099
+    second: topdwon_total_28
+  - first:
+      213: 5752863219293398557
+    second: topdwon_total_29
+  - first:
+      213: 2760908568295935104
+    second: topdwon_total_30
+  - first:
+      213: -8796190890733883806
+    second: topdwon_total_31
+  - first:
+      213: 8747044809276214611
+    second: topdwon_total_32
+  - first:
+      213: -7411457028736166508
+    second: topdwon_total_33
+  - first:
+      213: -3272032258537918333
+    second: topdwon_total_34
+  - first:
+      213: 755088781470993811
+    second: topdwon_total_35
+  - first:
+      213: -3266435080026373749
+    second: topdwon_total_36
+  - first:
+      213: -7175375904622531740
+    second: topdwon_total_37
+  - first:
+      213: -1955103525439683468
+    second: topdwon_total_38
+  - first:
+      213: 3956444430163430397
+    second: topdwon_total_39
+  - first:
+      213: 8233156825137518947
+    second: topdwon_total_40
+  - first:
+      213: -6865531117900870551
+    second: topdwon_total_41
+  - first:
+      213: 6914933584551976751
+    second: topdwon_total_42
+  - first:
+      213: 5301746958497047029
+    second: topdwon_total_43
+  - first:
+      213: -1261410302057240191
+    second: topdwon_total_44
+  - first:
+      213: 8250236046696440915
+    second: topdwon_total_45
+  - first:
+      213: -7224042843689512444
+    second: topdwon_total_46
+  - first:
+      213: 1177917047180591188
+    second: topdwon_total_47
+  - first:
+      213: 2420038121240859225
+    second: topdwon_total_48
+  - first:
+      213: -6865868563547982020
+    second: topdwon_total_49
+  - first:
+      213: 789290247474785712
+    second: topdwon_total_50
+  - first:
+      213: 672386104329202043
+    second: topdwon_total_51
+  - first:
+      213: -8446009695762503194
+    second: topdwon_total_52
+  - first:
+      213: -3148178632079795373
+    second: topdwon_total_53
+  - first:
+      213: -8486331778417574692
+    second: topdwon_total_54
+  - first:
+      213: 8915887236439411275
+    second: topdwon_total_55
+  - first:
+      213: 8544148781572226361
+    second: topdwon_total_56
+  - first:
+      213: -8505231778702623924
+    second: topdwon_total_57
+  - first:
+      213: -5107195828662421067
+    second: topdwon_total_58
+  - first:
+      213: -5837675076900942053
+    second: topdwon_total_59
+  - first:
+      213: -3386893276808479599
+    second: topdwon_total_60
+  - first:
+      213: 5209654360958431221
+    second: topdwon_total_61
+  - first:
+      213: 1876244157129332347
+    second: topdwon_total_62
+  - first:
+      213: -3484667092073194746
+    second: topdwon_total_63
+  - first:
+      213: 2394454414171332980
+    second: topdwon_total_64
+  - first:
+      213: -1479262959112647868
+    second: topdwon_total_65
+  - first:
+      213: -7173750534991601377
+    second: topdwon_total_66
+  - first:
+      213: -3375095190838376080
+    second: topdwon_total_67
+  - first:
+      213: -1971733168592698439
+    second: topdwon_total_68
+  - first:
+      213: -4282725172232746586
+    second: topdwon_total_69
+  - first:
+      213: -2632928861414232229
+    second: topdwon_total_70
+  - first:
+      213: 1550377977962212156
+    second: topdwon_total_71
+  - first:
+      213: -6311988092392764486
+    second: topdwon_total_72
+  - first:
+      213: -658427036975534702
+    second: topdwon_total_73
+  - first:
+      213: 2142434073093746083
+    second: topdwon_total_74
+  - first:
+      213: 8401871477095287816
+    second: topdwon_total_75
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: topdwon_total_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a41085234355e44a8def10822c4c69f
+      internalID: -6588290915118395247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d647775d471de2247acf2795da813f46
+      internalID: -896767229436698105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0acde46a85e1a3242b33f52fa845fe93
+      internalID: -3446140224295999286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361cc187ed0641e449d351964ebc9108
+      internalID: -3185318625901922647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c836a9d0716c1474fb6a8d56a64db298
+      internalID: 2418140467495504616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a92728752822e54ca32df67a7ee7290
+      internalID: -7915517811937322587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01177c85f37ada048bdf5850dd957579
+      internalID: 3471256400186998126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2364d17aa8ae24c9ad44721f5d0c87
+      internalID: 2271477226632120314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d3e523d5093c104197e035333fbc8a4
+      internalID: 1391698155615393030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073ce416fa9f0d447be6cd5a958a3a40
+      internalID: -6177338275547810604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa625ba798210d0429d85a0435ad9ff4
+      internalID: 8950356223796757499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 96
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3daecb5be94a574484c3b87dd4bb236
+      internalID: -528641132909562364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c519b508b41144cb227d9e1cb12513
+      internalID: 4617233367074996503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bfb877e4f8457844915e6933e352fad
+      internalID: 6842532556574138772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40120649b254b9e4c985fdb053dd3443
+      internalID: 393827932648854694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ebf51eab1018542b79629069f22fb4
+      internalID: -8652757487202131075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d9b2a5c5168e64a9077e21e64b7222
+      internalID: -559107707395804225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff4a9a1515b48044a108b0011ab1c1c
+      internalID: -3238246200164320168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab13516b8c2aa44ab77366c40fd276b
+      internalID: -7059631191867492171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_19
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c16550d908c48469fc8be1471988c1
+      internalID: 963581916297013903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca57d36a6a7904041a45dbb5ed22fedc
+      internalID: -6416153052144563717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_21
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 80
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e2c12959a13834882cc8297a706a75
+      internalID: 8601259455656652037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_22
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 81
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 722400532c83e544a842b74ea718affd
+      internalID: -6559605719626352676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_23
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 80
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b4b51075e350143b9a4e0f3e4a4d60
+      internalID: 6598431836338575314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1249c6b236e46448146f48dc534a10
+      internalID: -4240164483962006259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_25
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44ee0baef2bdaf42889954f578ab87e
+      internalID: 1617381420622934092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_26
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7ad1f86a53ed9479a3d0cdb97cbfeb
+      internalID: -6200371169500014022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_27
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5848f01a7a1ba6e4ab6881c55d22164e
+      internalID: 6168602108602138794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da8879a0a7414043859745937a7fea0
+      internalID: 9154982248137752099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_29
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2a8814e663e5b47a2b79b78dd4ed91
+      internalID: 5752863219293398557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_30
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8874426e84a1647870a7ac41bb2490
+      internalID: 2760908568295935104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_31
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995a64dc66681ca458a9f1d7a5592152
+      internalID: -8796190890733883806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_32
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 589ccadee58b46e4aa787881c3fbb8b0
+      internalID: 8747044809276214611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_33
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adee233a43e90ca469fc83a783500306
+      internalID: -7411457028736166508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_34
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 64
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20f0ebe9fefec742afb811623309fad
+      internalID: -3272032258537918333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_35
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 64
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ddf0914fc852a7438ec9bd322030d26
+      internalID: 755088781470993811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c2896cdc117094aad91dc454b99141
+      internalID: -3266435080026373749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_37
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093b0d22e64aa1e469fd0174be94d60b
+      internalID: -7175375904622531740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_38
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b845a1563b692f34fb47c2489e7d6f3f
+      internalID: -1955103525439683468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_39
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16fcd637ad529ad40846717b0893894b
+      internalID: 3956444430163430397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_40
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2867c3f2c8b024fb71065139d788a0
+      internalID: 8233156825137518947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_41
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bcc9910638435b4fba41d9b89876da2
+      internalID: -6865531117900870551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0a3793fd5939a4fac8f5999b61f2fc
+      internalID: 6914933584551976751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_43
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 500842437aa27d54a9eef6ee9c0bf2d0
+      internalID: 5301746958497047029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_44
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1df2217047e204840a52505d96aafcba
+      internalID: -1261410302057240191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_45
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359aa32273a88ef4e91f68decb76382f
+      internalID: 8250236046696440915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_46
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2faf64901a19a1f4e83b3b82a1bf9aad
+      internalID: -7224042843689512444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_47
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fbde622ec48f6f429c72f26f6cbce3e
+      internalID: 1177917047180591188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1705868681355a4aa800800832b0a34
+      internalID: 2420038121240859225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_49
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38a31b5d909257428c73ca923d7f160
+      internalID: -6865868563547982020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_50
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bbc00c1ac401144cbc68527ffcfd1a0
+      internalID: 789290247474785712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_51
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb3d32b4b46afaa4caf23b4444ef7516
+      internalID: 672386104329202043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_52
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dfdafb708e81e84894f1ef704e67997
+      internalID: -8446009695762503194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_53
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7ec241171d8ac41ad1f027e770ba13
+      internalID: -3148178632079795373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_54
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86928e26ac0df8143a725da88de4703c
+      internalID: -8486331778417574692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_55
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f134be919d6572744a4d33082081e5bc
+      internalID: 8915887236439411275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_56
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54f536d3ebd79649a3831a302eaf60a
+      internalID: 8544148781572226361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_57
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da8a665d17bd9294fa741cc404942849
+      internalID: -8505231778702623924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_58
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 32
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 897cd8f292e64a04283dfdf4822219d6
+      internalID: -5107195828662421067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_59
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e394d922462544c841d21456b22b91
+      internalID: -5837675076900942053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_60
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88d6ed58131f8b43afb83ffc8bb2ed2
+      internalID: -3386893276808479599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_61
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0204b2d2d71b763448d2ea579b034136
+      internalID: 5209654360958431221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_62
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be438b84dbd0bd46991d2bc0f75bd9c
+      internalID: 1876244157129332347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_63
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0503156c67ef95941b679842a4ae00c1
+      internalID: -3484667092073194746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_64
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d912b99ea4c39442adefd57c56f30e2
+      internalID: 2394454414171332980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_65
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e174392d7d17c184081f7ffc7ddad15d
+      internalID: -1479262959112647868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_66
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60442c757d82f0c40a833c2f1cd65f81
+      internalID: -7173750534991601377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_67
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 16
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5eaa9224c4f74469d43f16dd1ad027
+      internalID: -3375095190838376080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_68
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9aec7121a7c46344b9be2ece29c59b5
+      internalID: -1971733168592698439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_69
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d89effc0b61bf246bb3c1a79ecf437f
+      internalID: -4282725172232746586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_70
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcad46e1d4ce8174cb1ed8a6c46e9010
+      internalID: -2632928861414232229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_71
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd73653d499cb1479945d6cfd947dbc
+      internalID: 1550377977962212156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_72
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6750619adf8394fb52cfae4a34fa52
+      internalID: -6311988092392764486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_73
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61aee90fed95b3348b01cf8e29b7a854
+      internalID: -658427036975534702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_74
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247ecce42aab98142b3141c541489fa3
+      internalID: 2142434073093746083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: topdwon_total_75
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 16.166666
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98c3eca9fa1c1c439710766cb595f5f
+      internalID: 8401871477095287816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
