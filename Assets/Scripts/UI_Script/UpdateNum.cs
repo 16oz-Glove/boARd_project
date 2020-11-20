@@ -23,14 +23,14 @@ public class UpdateNum : MonoBehaviourPunCallbacks
     void Awake()
     {
         RoomName.text = PhotonNetwork.CurrentRoom.Name; //방제목 넣어주고
-        AllRoomRenewalRPC();  //방 정보들 리뉴얼
+        RoomRenewal();  //방 정보들 리뉴얼
     }
 
     //방 갱신 메서드
     void RoomRenewal()
     {
         //방에 있는 사람들의 
-        for(int i=0; i< PhotonNetwork.PlayerList.Length; i++)
+        for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
         {
             PlayerList[i].text = PhotonNetwork.PlayerList[i].NickName;
         }
@@ -42,26 +42,24 @@ public class UpdateNum : MonoBehaviourPunCallbacks
     //방에 입장했을때
     public override void OnJoinedRoom()
     {
-        AllRoomRenewalRPC();
+        RoomRenewal();
     }
 
-    /*  오버라이드로 쓰기가 되야되는데, 지금 안되고 있는중...;
-    //사람이 입장했을때
-    public void onPlayerEnteredRoom(Player other)
+    public override void OnPlayerEnteredRoom(Player other)
     {
         RoomRenewal();
     }
-        */
 
     //사람이 나갔을때
     public override void OnLeftRoom()
     {
-        if(PhotonNetwork.CurrentRoom.PlayerCount == 0)
+        if (PhotonNetwork.CurrentRoom.PlayerCount == 0)
         {
             return;
-        }else
+        }
+        else
         {
-            AllRoomRenewalRPC();
+            RoomRenewal();
         }
     }
 
@@ -74,7 +72,8 @@ public class UpdateNum : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)
         {
             SceneManager.LoadScene("ARrecognize_pg");
-        }else
+        }
+        else
         {
             SceneManager.LoadScene("Mainmenu");
         }
