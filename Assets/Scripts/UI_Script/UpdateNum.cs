@@ -71,7 +71,7 @@ public class UpdateNum : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.IsMasterClient)
         {
-            SceneManager.LoadScene("ARrecognize_pg");
+            SceneManager.LoadScene("ARrecognize");
         }
         else
         {

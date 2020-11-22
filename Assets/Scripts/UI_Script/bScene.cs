@@ -29,16 +29,10 @@ public class bScene : MonoBehaviour
         SceneManager.LoadScene("SignIn");
     }
 
-    public void OnclickButton_SceneLoad_ARrecognize_tt()
+    public void OnclickButton_SceneLoad_ARrecognize()
     {
         //버튼 누르면, AR인식하는 Scene으로 전환
-        SceneManager.LoadScene("ARrecognize_tt");
-    }
-
-    public void OnclickButton_SceneLoad_ARrecognize_pg()
-    {
-        //버튼 누르면, AR인식하는 Scene으로 전환
-        SceneManager.LoadScene("ARrecognize_pg");
+        SceneManager.LoadScene("ARrecognize");
     }
 
     public void OnclickButton_SceneLoad_Mainmenu()
@@ -59,6 +53,16 @@ public class bScene : MonoBehaviour
     public void OnclickButton_SceneLoad_Bang_pg()
     {
         SceneManager.LoadScene("Bang_pg");
+    }
+
+    public void OnclickSceneLoad_BoardName_tt()
+    {
+        SceneManager.LoadScene(BoardName.Name_Scene + "_tt");
+    }
+
+    public void OnclickSceneLoad_BoardName_pg()
+    {
+        SceneManager.LoadScene(BoardName.Name_Scene + "_pg");
     }
 
     //Scene의 화면방향 정상적으로 전환

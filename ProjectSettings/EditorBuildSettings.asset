@@ -18,11 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 5ce8703fe7c114618a557abc1b45f9fb
   - enabled: 1
-    path: Assets/Scenes/ARrecognize_tt.unity
+    path: Assets/Scenes/ARrecognize.unity
     guid: 814ad92204d2b234c805591fa1fa4bce
-  - enabled: 1
-    path: Assets/Scenes/ARrecognize_pg.unity
-    guid: c7eb9a99dc5b2ea4babce1a95f315e39
   - enabled: 1
     path: Assets/Scenes/Bang_pg.unity
     guid: 6e32d7ffd634a394fa6a38030bdc5b8f

@@ -38,16 +38,8 @@ public class PandemicGame : BoardGame_info
 
     protected override void Update_Button()
     {
-        //만약 ARrecognize_pg Scene면
-        if (SceneManager.GetActiveScene().name == "ARrecognize_pg")
-        {
-            button_st = board_Name + " 연습게임 시작";
-        }
-        else    // if(SceneManager.GetActiveScene().name == "ARrecognize") : 만약 ARrecognize_tt Scene면
-        {
-            button_st = board_Name + " 튜토리얼 시작";
-        }
-
+        button_st = board_Name + " 튜토리얼 시작";
+        button_st_pg = board_Name + " 연습게임 시작";
     }
 
 }
