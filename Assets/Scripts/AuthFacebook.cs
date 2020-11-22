@@ -1,27 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Facebook.Unity;
+using Firebase;
+using Firebase.Auth;
+using Firebase.Database;
+using Firebase.Unity.Editor;
 
 public class AuthFacebook : MonoBehaviour
 {
+    public InputField nickNameField;
+    public GameObject namingPanel;
+    
     void Start()
     {
-        // 초기화 확인
+        namingPanel.SetActive(false);
+
+        // 페이스북 초기화 확인
         if (!FB.IsInitialized)
         {
-            FB.Init(InitCallBack, OnHideUnity); // 초기화 진행(콜백)
+            FB.Init(InitCallBack, OnHideUnity);
         }
-        else // 초기화되었다면 개발자 페이지의 앱 활성화
+        else
         {
-
-            // Signal an app activattion App Event
             FB.ActivateApp();
-            // Continue with Facebook SDK
-            // ...
         }
     }
 
+    // 페이스북 초기화 콜백
     private void InitCallBack()
     {
         if (FB.IsInitialized)
@@ -52,19 +60,22 @@ public class AuthFacebook : MonoBehaviour
     // 페이스북 로그인 버튼 클릭 시
     public void OnClickFacebookLogin()
     {
+        if (!AuthManager.IsFirebaseReady || AuthManager.IsSignInOnProgress || AuthManager.User != null)
+        {
+            return;
+        }
+        AuthManager.IsSignInOnProgress = true;
+        
         var perms = new List<string>() { "public_profile", "email" };
-
-        // 로그인하라
         FB.LogInWithReadPermissions(perms, AuthCallback);
     }
 
-    // 콜백
+    // 페이스북 로그인 콜백
     private void AuthCallback(ILoginResult result)
     {
-
-        if (result.Error != null) // 에러의 경우
+        if (result.Error != null)
         {
-            Debug.Log(result.Error);
+            Debug.LogError(result.Error);
         }
         else
         {
@@ -73,24 +84,20 @@ public class AuthFacebook : MonoBehaviour
                 Debug.Log("Facebook login successed!");
 
                 var aToken = AccessToken.CurrentAccessToken;
-
-                Debug.Log(aToken.UserId);
                 foreach (string perm in aToken.Permissions)
                 {
                     Debug.Log(perm);
                 }
-
-                // for firebase
                 StartCoroutine(coLogin(aToken));
             }
-            else // 로그인이 취소된 경우
+            else
             {
                 Debug.Log("User cancelled login");
             }
         }
     }
 
-    // 페이스북 토큰을 firebase로 전달하여 계정 생성
+    // 페이스북 토큰으로 앱 로그인 진행
     IEnumerator coLogin(AccessToken aToken)
     {
         Debug.Log(string.Format("\nTry to get Token...{0}", aToken));
@@ -98,22 +105,76 @@ public class AuthFacebook : MonoBehaviour
 
         Debug.Log(string.Format("\nTry Auth for Facebook...{0}", aToken.UserId));
 
-        Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
-        Firebase.Auth.Credential credential = Firebase.Auth.FacebookAuthProvider.GetCredential(aToken.TokenString);
-        auth.SignInWithCredentialAsync(credential).ContinueWith(task => {
-            if (task.IsCanceled)
+        Credential credential = FacebookAuthProvider.GetCredential(aToken.TokenString);
+        AuthManager.firebaseAuth.SignInWithCredentialAsync(credential).ContinueWith(task => {
+            Debug.Log($"Facebook Sign in status : {task.Status}");
+            AuthManager.IsSignInOnProgress = false;
+            if (task.IsFaulted)
+            {
+                Debug.LogError("SignInWithCredentialAsync encountered an error: " + task.Exception);
+            }
+            else if (task.IsCanceled)
             {
                 Debug.LogError("SignInWithCredentialAsync was canceled.");
+            }
+            else
+            {
+                AuthManager.User = task.Result;
+                Debug.Log("Succeed to Sign-in: " + AuthManager.User.Email);
+                if(AuthManager.User.DisplayName == null)
+                {
+                    namingPanel.SetActive(true);
+                }
+                else
+                {
+                    SceneManager.LoadScene("Mainmenu");
+                }
+            }
+        });
+    }
+
+    // naming 패널에서 닉네임 입력받아 DB 등록
+    public void OnClickCreate()
+    {
+        UpdateUserName(AuthManager.User);
+        AddToDB(AuthManager.User);
+        SceneManager.LoadScene("Mainmenu");
+    }
+
+    // Auth에 이름 등록
+    private void UpdateUserName(FirebaseUser newUser)
+    {
+        UserProfile profile = new UserProfile { DisplayName = nickNameField.text };
+        newUser.UpdateUserProfileAsync(profile).ContinueWith(task => {
+            if (task.IsCanceled)
+            {
+                Debug.LogError("Setting DisplayName was canceled.");
                 return;
             }
             if (task.IsFaulted)
             {
-                Debug.LogError("SignInWithCredentialAsync encountered an error: " + task.Exception);
+                Debug.LogError("Setting DisplayName encountered an error: " + task.Exception);
                 return;
             }
 
-            Firebase.Auth.FirebaseUser newUser = task.Result;
-            Debug.LogFormat("User signed in successfully: {0} ({1})", newUser.DisplayName, newUser.UserId);
+            Debug.LogFormat("Successfully created. Welcome, {0}({1})!", newUser.DisplayName, newUser.Email);
         });
+    }
+    
+    // DB에 유저 데이터 등록
+    private void AddToDB(FirebaseUser newUser)
+    {
+        // DB 경로 설정 후 인스턴스 초기화
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://test-board-1158b.firebaseio.com/");
+        DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+
+        string time = System.DateTime.Now.ToString("yyyyMMdd HH:mm:ss");
+        NewUser user = new NewUser(newUser.Email, nickNameField.text, time);
+
+        string json = JsonUtility.ToJson(user); // data to json
+        string key = newUser.UserId; // take uid as key value
+        reference.Child("users").Child(key).SetRawJsonValueAsync(json);
+
+        Debug.Log("Succesfully added new user to DB.");
     }
 }
