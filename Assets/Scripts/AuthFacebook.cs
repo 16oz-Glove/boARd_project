@@ -14,12 +14,14 @@ public class AuthFacebook : MonoBehaviour
 {
     public InputField nickNameField;
     public GameObject namingPanel;
+    public GameObject waitingPanel;
 
     public bool isFBloginDone;
 
     void Start()
     {
         namingPanel.SetActive(false);
+        waitingPanel.SetActive(false);
         isFBloginDone = false;
 
         // 페이스북 초기화 확인
@@ -77,9 +79,10 @@ public class AuthFacebook : MonoBehaviour
             return;
         }
         AuthManager.IsSignInOnProgress = true;
+        waitingPanel.SetActive(true);
 
         var perms = new List<string>() { "public_profile", "email" };
-        FB.LogInWithReadPermissions(perms, AuthCallback);
+        FB.LogInWithReadPermissions(perms, AuthCallback);   
     }
 
     // 페이스북 로그인 콜백
@@ -168,6 +171,7 @@ public class AuthFacebook : MonoBehaviour
                 }
                 if (checkNew is true)
                 {
+                    waitingPanel.SetActive(false);
                     namingPanel.SetActive(true);
                 }
             }
@@ -180,7 +184,7 @@ public class AuthFacebook : MonoBehaviour
         UpdateUserName(AuthManager.User);
         AddToDB(AuthManager.User);
 
-        System.Threading.Thread.Sleep(300);
+        System.Threading.Thread.Sleep(1000);
         SceneManager.LoadScene("Mainmenu");
     }
 
