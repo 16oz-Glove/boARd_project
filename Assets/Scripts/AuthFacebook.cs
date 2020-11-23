@@ -9,14 +9,18 @@ using Firebase.Auth;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 
+
 public class AuthFacebook : MonoBehaviour
 {
     public InputField nickNameField;
     public GameObject namingPanel;
-    
+
+    public bool isFBloginDone;
+
     void Start()
     {
         namingPanel.SetActive(false);
+        isFBloginDone = false;
 
         // 페이스북 초기화 확인
         if (!FB.IsInitialized)
@@ -26,6 +30,14 @@ public class AuthFacebook : MonoBehaviour
         else
         {
             FB.ActivateApp();
+        }
+    }
+
+    private void Update()
+    {
+        if (isFBloginDone == true)
+        {
+            CheckNewUser();
         }
     }
 
@@ -60,12 +72,12 @@ public class AuthFacebook : MonoBehaviour
     // 페이스북 로그인 버튼 클릭 시
     public void OnClickFacebookLogin()
     {
-        if (!AuthManager.IsFirebaseReady || AuthManager.IsSignInOnProgress || AuthManager.User != null)
+        if (!AuthManager.IsFirebaseReady || AuthManager.User != null || AuthManager.IsSignInOnProgress == true)
         {
             return;
         }
         AuthManager.IsSignInOnProgress = true;
-        
+
         var perms = new List<string>() { "public_profile", "email" };
         FB.LogInWithReadPermissions(perms, AuthCallback);
     }
@@ -121,13 +133,42 @@ public class AuthFacebook : MonoBehaviour
             {
                 AuthManager.User = task.Result;
                 Debug.Log("Succeed to Sign-in: " + AuthManager.User.Email);
-                if(AuthManager.User.DisplayName == null)
+                //nickNameField.text = AuthManager.User.DisplayName;
+                isFBloginDone = true;
+            }
+        });
+    }
+
+    // 새로운 유저인지 확인
+    private void CheckNewUser()
+    {
+        isFBloginDone = false;
+
+        bool checkNew = true;
+        string uid = AuthManager.User.UserId;
+
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://test-board-1158b.firebaseio.com/");
+        FirebaseDatabase.DefaultInstance.GetReference("users").GetValueAsync().ContinueWith(task =>
+        {
+            if (task.IsFaulted)
+            {
+                Debug.LogError("Cannot read DB.");
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+                foreach (DataSnapshot child in snapshot.Children)
+                {
+                    if (child.Key.ToString().Equals(uid)) // DB에 존재하는 유저
+                    {
+                        Debug.Log("Not a new user");
+                        checkNew = false;
+                        SceneManager.LoadScene("Mainmenu");
+                    }
+                }
+                if (checkNew is true)
                 {
                     namingPanel.SetActive(true);
-                }
-                else
-                {
-                    SceneManager.LoadScene("Mainmenu");
                 }
             }
         });
@@ -138,6 +179,8 @@ public class AuthFacebook : MonoBehaviour
     {
         UpdateUserName(AuthManager.User);
         AddToDB(AuthManager.User);
+
+        System.Threading.Thread.Sleep(300);
         SceneManager.LoadScene("Mainmenu");
     }
 
@@ -157,15 +200,13 @@ public class AuthFacebook : MonoBehaviour
                 return;
             }
 
-            Debug.LogFormat("Successfully created. Welcome, {0}({1})!", newUser.DisplayName, newUser.Email);
+            Debug.Log("Successfully updated.");
         });
     }
-    
+
     // DB에 유저 데이터 등록
     private void AddToDB(FirebaseUser newUser)
     {
-        // DB 경로 설정 후 인스턴스 초기화
-        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://test-board-1158b.firebaseio.com/");
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
 
         string time = System.DateTime.Now.ToString("yyyyMMdd HH:mm:ss");
@@ -173,6 +214,7 @@ public class AuthFacebook : MonoBehaviour
 
         string json = JsonUtility.ToJson(user); // data to json
         string key = newUser.UserId; // take uid as key value
+
         reference.Child("users").Child(key).SetRawJsonValueAsync(json);
 
         Debug.Log("Succesfully added new user to DB.");

@@ -28,6 +28,7 @@ public class AuthManager : MonoBehaviour
         // 상태 비활성화
         signInButton.interactable = false;
         errorPanel.SetActive(false);
+        IsSignInOnProgress = false;
 
         // Firebase 사용 가능한지 확인(Async메서드가 아니기 때문에 callback, chain 필요 --> ContinueWith로 chain 걸어주기)
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
@@ -56,8 +57,9 @@ public class AuthManager : MonoBehaviour
     // 로그인 버튼 클릭 시
     public void OnClickSignIn()
     {
-        // 파이어베이스가 준비 안된 상태 || 이미 로그인 서비스가 실행 중인 경우 || 이미 유저가 할당된 경우
-        if (!IsFirebaseReady || IsSignInOnProgress || User != null)
+        
+        // 파이어베이스가 준비 안된 상태 || 이미 유저가 할당된 경우 || 이미 로그인 서비스가 실행 중인 경우
+        if (!IsFirebaseReady || User != null || IsSignInOnProgress == true)
         {
             return;
         }

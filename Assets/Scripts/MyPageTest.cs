@@ -26,7 +26,6 @@ public class MyPageTest : MonoBehaviour
 	void Start()
     {
 		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://test-board-1158b.firebaseio.com/");
-		DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
 
 		myPagePanel.SetActive(false);
 		friendsScroll.SetActive(false);
