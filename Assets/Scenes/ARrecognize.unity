@@ -4157,6 +4157,7 @@ GameObject:
   - component: {fileID: 881577326}
   - component: {fileID: 881577327}
   - component: {fileID: 881577328}
+  - component: {fileID: 881577329}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -4250,6 +4251,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchpos: {x: 0, y: 0}
+--- !u!114 &881577329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881577322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28cdb81236711f54e9d481e0beb2351b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &885404901
 GameObject:
   m_ObjectHideFlags: 0
@@ -6587,7 +6600,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\uC774 \uBCF4\uB4DC\uAC8C\uC784\uC73C\uB85C\n\uD29C\uD1A0\uB9AC\uC5BC\uC744
-    \uC9C4\uD589 \uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+    \uC9C4\uD589\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
 --- !u!222 &1473272995
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6756,6 +6769,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 881577326}
         m_MethodName: OnclickSceneLoad_BoardName_tt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 881577329}
+        m_MethodName: OnClick_tt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
