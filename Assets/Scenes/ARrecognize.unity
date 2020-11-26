@@ -3181,7 +3181,7 @@ GameObject:
   - component: {fileID: 585122871}
   - component: {fileID: 585122873}
   m_Layer: 5
-  m_Name: createRoomRutton
+  m_Name: createRoomButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4158,6 +4158,7 @@ GameObject:
   - component: {fileID: 881577327}
   - component: {fileID: 881577328}
   - component: {fileID: 881577329}
+  - component: {fileID: 881577330}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -4263,6 +4264,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cdb81236711f54e9d481e0beb2351b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &881577330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881577322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8f092eaaeeb9146bdbc51eaa1e491d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userName: {fileID: 607077765}
 --- !u!1 &885404901
 GameObject:
   m_ObjectHideFlags: 0
