@@ -8,6 +8,12 @@ public class bScene : MonoBehaviour
     //"종료 하시겠습니까?" 하는 패널을 가리키는 오브젝트
     public GameObject exitButton;
     
+    //테스트를 위한 임시로 만들어준 스크립ㄷ트.
+    void Awake()
+    {
+        Screen.SetResolution(960, 540, false);  // 스크린크기 수정
+    }
+
     //뒤로가기 버튼을 눌렀을때, "게임종료하시겠습니까" 하는 패널 띄우기
     void Update()
     {
