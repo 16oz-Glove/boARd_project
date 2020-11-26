@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+  NickNameText: {fileID: 0}
+  PV: {fileID: 0}
 --- !u!50 &402473601945617226
 Rigidbody2D:
   serializedVersion: 4

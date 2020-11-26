@@ -47,13 +47,15 @@ public class NetworkUI : MonoBehaviourPun
 
     public void GameStart()
     {
-        GameStartRPC();
+        //플레이어 전체에게 RPC 실행
+        photonView.RPC("GameStartRPC", RpcTarget.All);
     }
 
     IEnumerator Count()
     {
         yield return new WaitForSeconds(10.0f);
-        PhotonNetwork.LoadLevel("Bang_pg");
+        //PhotonNetwork.LoadLevel("Bang_pg");
+        PhotonNetwork.LoadLevel("New Scene");
         TimeCost = 10.0f;
     }
 

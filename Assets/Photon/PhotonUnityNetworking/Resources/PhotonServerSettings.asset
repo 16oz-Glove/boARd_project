@@ -42,6 +42,7 @@ MonoBehaviour:
   - AllRoomRenewal
   - AllRoomRenewalRPC
   - GameStartRPC
+  - AnimatorEditRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

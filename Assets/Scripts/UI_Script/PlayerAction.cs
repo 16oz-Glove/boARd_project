@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 
 public class PlayerAction : MonoBehaviourPun
 {
     public float Speed;
+    public Text NickNameText;
+    public PhotonView PV;
     private Rigidbody2D rigid;
     private Animator anim;
     private SpriteRenderer spriteRenderer;
@@ -34,30 +37,23 @@ public class PlayerAction : MonoBehaviourPun
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        //사용자가 로컬이라면
-        if (photonView.IsMine)
-        {
-            spriteRenderer.color = Color.green;
-        }
+        //사용자 닉네임과 닉네임 색깔 넣어주기.
+        NickNameText.text = PV.IsMine ? PhotonNetwork.NickName : PV.Owner.NickName;
+        NickNameText.color = PV.IsMine ? Color.green : Color.red;
+
     }
 
     //매 프레임 사용자 입력을 감지
     void Update()
     {
         //로컬 플레이어가 아닌 경우 입력을 받지 않음
-        if (!photonView.IsMine)
+        if (!PV.IsMine)
         {
             return;
         }
         //PC+ Movile Move Value
         h = Input.GetAxisRaw("Horizontal") + right_Value + left_Value;
         v = Input.GetAxisRaw("Vertical") + up_Value + down_Value;
-
-        /*
-        var input = InputButton.VerticalInput;
-        var distance = input * Speed * Time.deltaTime;
-        var targetPosition = transform.position + Vector3.up * distance;
-        */
 
         //Check Button Down & Up
         bool hDown = Input.GetButtonDown("Horizontal") || right_Down || left_Down;
@@ -73,6 +69,10 @@ public class PlayerAction : MonoBehaviourPun
         else if (hUp || vUp)
             isHorizonMove = h != 0;
 
+        //애니이션 동기화
+        PV.RPC("AnimatorEditRPC", RpcTarget.AllBuffered, h, v);
+
+        /*
         //Animation
         if (anim.GetInteger("hAxisRaw") != h)
         {
@@ -85,6 +85,7 @@ public class PlayerAction : MonoBehaviourPun
             anim.SetInteger("vAxisRaw", (int)v);
         }
         else anim.SetBool("isChange", false);
+        */
 
         //Mobile Var Init
         up_Down = false;
@@ -97,6 +98,24 @@ public class PlayerAction : MonoBehaviourPun
         right_Up = false;
 
 
+    }
+    
+    //애니메이션이 동기화가 잘 안되는것 같아서, RPC로 시켜주기
+    [PunRPC]
+    void AnimatorEditRPC(float h, float v)
+    {
+        //Animation
+        if (anim.GetInteger("hAxisRaw") != h)
+        {
+            anim.SetBool("isChange", true);
+            anim.SetInteger("hAxisRaw", (int)h);
+        }
+        else if (anim.GetInteger("vAxisRaw") != v)
+        {
+            anim.SetBool("isChange", true);
+            anim.SetInteger("vAxisRaw", (int)v);
+        }
+        else anim.SetBool("isChange", false);
     }
 
     void FixedUpdate()
