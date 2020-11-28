@@ -12,12 +12,6 @@ public class LogRecord : MonoBehaviour
         AddLog_tt();
     }
 
-    // 뱅 연습게임 입장 시
-    public void OnClick_pg()
-    {
-        AddLog_pg();
-    }
-
     private void AddLog_tt()
     {
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
@@ -44,7 +38,8 @@ public class LogRecord : MonoBehaviour
         });
     }
 
-    private void AddLog_pg()
+    // 연습게임 로그 저장: UpdateRoomPlayer.cs에서 사용
+    public static void AddLog_pg()
     {
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
         

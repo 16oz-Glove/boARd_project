@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Anim_UI : MonoBehaviour
@@ -15,6 +14,7 @@ public class Anim_UI : MonoBehaviour
     {
         StartCoroutine(CloseAfterDelay());
     }
+
     private IEnumerator CloseAfterDelay()
     {
         animator.SetTrigger("close");

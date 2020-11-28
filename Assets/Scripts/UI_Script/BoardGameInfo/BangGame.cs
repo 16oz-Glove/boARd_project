@@ -1,10 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-
-public class BangGame : BoardGame_info
+﻿public class BangGame : BoardGame_info
 {
     protected override void Update_board_Name()
     {
@@ -41,5 +35,4 @@ public class BangGame : BoardGame_info
             button_st = board_Name + " 튜토리얼 시작";
             button_st_pg = board_Name + " 연습게임 시작";
     }
-
 }

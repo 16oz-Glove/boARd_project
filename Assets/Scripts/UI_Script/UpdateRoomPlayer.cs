@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;  //씬 관련 메서드 관리 라이브러리
+using Hashtable = ExitGames.Client.Photon.Hashtable;
+
 
 public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
 {
@@ -21,7 +21,6 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
 
     [Header("캔버스")]
     public GameObject panel;
-
 
     void Awake()
     {
@@ -52,8 +51,6 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
         Nownum.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();    // 방에 입장해 있는 현재 인원 수
         Allnum.text = PhotonNetwork.CurrentRoom.MaxPlayers.ToString();     // 최대 인원수
     }
-
-    
 
     //방에 입장했을때
     public override void OnJoinedRoom()
@@ -105,6 +102,8 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
     public void GameStartRPC()
     {
         panel.SetActive(false);
+        BoardName.Name_Scene = PhotonNetwork.CurrentRoom.CustomProperties["BoardName"].ToString();
+        LogRecord.AddLog_pg(); // 로그 저장
     }
 
     [PunRPC]

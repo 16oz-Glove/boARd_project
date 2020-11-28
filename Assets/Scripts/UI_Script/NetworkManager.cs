@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;       //MonoBehaviourPunCallbacks 상속을 위한 using
 using Photon.Realtime;  //MonoBehaviourPunCallbacks 상속을 위한 using
-using UnityEngine.UI;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
@@ -44,8 +44,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             PhotonNetwork.LocalPlayer.NickName = NickNameInput.text;    //유저 닉네임 입력한 부분을 등록
             joinButton.interactable = false;    //서버에 접속이 성공하면 비활성화.
             StatusText.text = "방을 만드는 중입니다...";
+
             // 방장이 입력한 방 제목과, 최대 인원수를 가진 방을 생성.
-            PhotonNetwork.CreateRoom(roomInput.text, new RoomOptions { MaxPlayers = MaxplayerNum });
+            RoomOptions roomOption = new RoomOptions();
+            roomOption.MaxPlayers = MaxplayerNum;
+            roomOption.CustomRoomProperties = new Hashtable() { { "BoardName", BoardName.Name_Scene } };
+            PhotonNetwork.CreateRoom(roomInput.text, roomOption);
         }
         else        //잘 접속이 되지 않았다면
         {
@@ -130,7 +134,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         //PhotonNetwork.LoadLevel("Lobby");    //동기화가 자동으로됨.
         PhotonNetwork.LoadLevel("New Scene");    //동기화가 자동으로됨.
     }
-
 
     //방 입장에 실패한 경우
     public override void OnJoinRoomFailed(short returnCode, string message)

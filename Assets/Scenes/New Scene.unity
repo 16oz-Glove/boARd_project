@@ -5282,6 +5282,7 @@ MonoBehaviour:
     type: 3}
   minimap: {fileID: 0}
   CanvusMap_parent: {fileID: 1188605854}
+  go: {fileID: 0}
 --- !u!4 &1317612851
 Transform:
   m_ObjectHideFlags: 0
