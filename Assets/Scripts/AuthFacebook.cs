@@ -9,7 +9,6 @@ using Firebase.Auth;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 
-
 public class AuthFacebook : MonoBehaviour
 {
     public InputField nickNameField;

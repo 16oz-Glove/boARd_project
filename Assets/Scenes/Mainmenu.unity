@@ -13043,8 +13043,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1084165445}
-        m_MethodName: OnClickButton_all
+      - m_Target: {fileID: 869532287}
+        m_MethodName: OnClickProfile
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13054,8 +13054,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 869532287}
-        m_MethodName: OnClickProfile
+      - m_Target: {fileID: 1084165445}
+        m_MethodName: OnClickButton_all
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
