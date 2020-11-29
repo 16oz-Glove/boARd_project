@@ -34,7 +34,6 @@ public class LetsIN : MonoBehaviour
             GameObject CurrentTouch = hit.transform.gameObject;
             CurrentTouch.GetComponent<BoardGame_info>().Touching_Board();
         }
-
     }
 
 }

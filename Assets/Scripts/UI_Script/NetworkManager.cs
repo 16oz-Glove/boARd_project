@@ -30,7 +30,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.GameVersion = gameVersion;
         StatusText.text = "마스터 서버 접속 중...";
         PhotonNetwork.ConnectUsingSettings();        // 마스터 서버에 접속을 성공하면, 밑에 OnConnectedToMaster() 메서드가 자동으로 실행됨.
-
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     //'방 만들기 버튼을 눌렀을때 실행될 메서드'
@@ -127,7 +127,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         StatusText.text = "방에 입장합니다.";
         //SceneManager.LoadScene(); 으로 이동하면 안됨. 동기화가 전혀 안됨. 독자적으로 자기 세계에서만 씬을 이동함.
-        //PhotonNetwork.LoadLevel("Lobby");    //동기화가 자동으로됨.
         PhotonNetwork.LoadLevel("New Scene");    //동기화가 자동으로됨.
     }
 

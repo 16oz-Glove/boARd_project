@@ -42,6 +42,14 @@ MonoBehaviour:
   - AllRoomRenewal
   - AllRoomRenewalRPC
   - GameStartRPC
+  - AnimatorEditRPC
+  - RenewalRPC
+  - NextTurnRPC
+  - positioningRPC
+  - reNameRPC
+  - Set_noticeRPC
+  - Set_Player_buttonRPC
+  - setAnounce_TurnRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

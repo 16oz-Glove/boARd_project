@@ -19,9 +19,10 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
     private Button Startbutton;
     private GameObject Startbutton2;
 
-    [Header("캔버스")]
+    [Header("게임시작캔버스")]
     public GameObject panel;
-
+    [Header("가이드캔버스")]
+    public GameObject guide_panel;
 
     void Awake()
     {
@@ -53,17 +54,17 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
         Allnum.text = PhotonNetwork.CurrentRoom.MaxPlayers.ToString();     // 최대 인원수
     }
 
-    
-
     //방에 입장했을때
     public override void OnJoinedRoom()
     {
         RoomRenewal();
+        photonView.RPC("GameStartRPC", RpcTarget.All);
     }
 
     public override void OnPlayerEnteredRoom(Player other)
     {
         RoomRenewal();
+
     }
 
     //사람이 나갔을때
@@ -105,6 +106,8 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
     public void GameStartRPC()
     {
         panel.SetActive(false);
+        guide_panel.SetActive(true);
+        UIManager.instance.set_notice_Turn(1);   //보안관 차례임을 표시
     }
 
     [PunRPC]
@@ -113,5 +116,9 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
         Nownum.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();    // 방에 입장해 있는 현재 인원 수
         Allnum.text = PhotonNetwork.CurrentRoom.MaxPlayers.ToString();     // 최대 인원수
     }
+
+
+
+
 
 }

@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private void SpawnPlayer()
     {
-        var localPlayerIndex = PhotonNetwork.LocalPlayer.ActorNumber;
+        var localPlayerIndex = PhotonNetwork.LocalPlayer.ActorNumber-1;
         var spawnPosition = spawnPositions[localPlayerIndex % spawnPositions.Length];
 
         PhotonNetwork.Instantiate(playerPrefab.name, spawnPosition.position, spawnPosition.rotation);
