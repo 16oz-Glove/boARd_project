@@ -11,6 +11,7 @@ public class MyPageTest : MonoBehaviour
 	public GameObject myPagePanel;
 	public GameObject friendsScroll;
 	public GameObject logsScroll;
+	public Text guide_text;
 
 	public Button myLogButton;
 	public Button myFriendButton;
@@ -33,6 +34,39 @@ public class MyPageTest : MonoBehaviour
 
 		myFriendButton.interactable = false;
 		myLogButton.interactable = false;
+	}
+
+	// 초대 메세지 확인
+	private void CheckMessage()
+    {
+		FirebaseDatabase.DefaultInstance.GetReference("Leaders").GetValueAsync().ContinueWith(task => {
+			if (task.IsFaulted)
+			{
+				// Handle the error...
+			}
+			else if (task.IsCompleted)
+			{
+				DataSnapshot snapshot = task.Result;
+				// Do something with snapshot...
+			}
+		 });
+
+		FirebaseDatabase.DefaultInstance.GetReference("messages").OrderByChild("receiver").EqualTo(AuthManager.User.DisplayName).ChildAdded += HandleChildAdded;
+	}
+
+	private void HandleChildAdded(object sender, ChildChangedEventArgs args)
+	{
+		if (args.DatabaseError != null)
+		{
+			Debug.LogError(args.DatabaseError.Message);
+			return;
+		}
+		/*
+		// Do something with the data in args.Snapshot
+		var highscoreobject = args.Snapshot.Value as Dictionary<string, System.Object>;
+		//Debug.Log(args.Snapshot.Child("score").Value);
+		foreach (var item in highscoreobject)
+			guide_text.text = args.Snapshot;*/
 	}
 
 	// 프로파일 눌렀을 때 DB 열람
