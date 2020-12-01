@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Firebase;
@@ -8,52 +7,83 @@ using Firebase.Unity.Editor;
 
 public class MyPageTest : MonoBehaviour
 {
-	public GameObject myPagePanel;
-	public GameObject friendsScroll;
-	public GameObject logsScroll;
-	public Text guide_text;
+	// 메인화면 오브젝트
+	public GameObject messageButton;
+	public GameObject messagePanel;
+	public Text contentText;
+	public InputField roomInput, nickNameInput;
+	public GameObject waitingPanel;
 
+	// 마이페이지 오브젝트
+	public GameObject myPagePanel;
+	public GameObject editPanel;
 	public Button myLogButton;
 	public Button myFriendButton;
+	public GameObject friendsScroll;
+	public GameObject logsScroll;
 
 	public GameObject friend_prefab;
 	public GameObject friend_parent;
 	public GameObject log_prefab;
 	public GameObject log_parent;
 
+	private string key = null;
+	private string room = null;
+	private DataSnapshot message_snapshot = null;
 	private DataSnapshot log_snapshot = null;
 	private DataSnapshot friend_snapshot = null;
 
+	// 메인화면 초기화
 	void Start()
     {
-		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://test-board-1158b.firebaseio.com/");
-
+		messageButton.SetActive(false);
+		messagePanel.SetActive(false);
+		waitingPanel.SetActive(false);
 		myPagePanel.SetActive(false);
+
+		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://test-board-1158b.firebaseio.com/");
+		CheckMessage(); // 초대 메세지 온 거 있는지 확인
+	}
+
+	// 메인화면에서,
+	// 프로파일 눌렀을 때 마이페이지 오픈하면서 초기화
+	public void OnClickProfile()
+	{
 		friendsScroll.SetActive(false);
 		logsScroll.SetActive(false);
+		editPanel.SetActive(false);
 
 		myFriendButton.interactable = false;
 		myLogButton.interactable = false;
+
+		// DB 열람
+		Read_Friends();
+		Read_Logs();
 	}
 
 	// 초대 메세지 확인
 	private void CheckMessage()
-    {
-		FirebaseDatabase.DefaultInstance.GetReference("Leaders").GetValueAsync().ContinueWith(task => {
+	{
+		FirebaseDatabase.DefaultInstance.GetReference("messages").OrderByChild("receiver").EqualTo(AuthManager.User.DisplayName).GetValueAsync().ContinueWith(task => {
 			if (task.IsFaulted)
 			{
-				// Handle the error...
+				Debug.LogError("Cannot read DB.");
 			}
 			else if (task.IsCompleted)
 			{
-				DataSnapshot snapshot = task.Result;
-				// Do something with snapshot...
+				if (task.Result != null)
+                {
+					message_snapshot = task.Result;
+					messageButton.SetActive(true);
+					Debug.Log("New messages arrived.");
+				}
 			}
-		 });
-
+		});
+		// 이벤트 리스너(지속적으로 확인하라)
 		FirebaseDatabase.DefaultInstance.GetReference("messages").OrderByChild("receiver").EqualTo(AuthManager.User.DisplayName).ChildAdded += HandleChildAdded;
 	}
 
+	// 이벤트 핸들러
 	private void HandleChildAdded(object sender, ChildChangedEventArgs args)
 	{
 		if (args.DatabaseError != null)
@@ -61,43 +91,55 @@ public class MyPageTest : MonoBehaviour
 			Debug.LogError(args.DatabaseError.Message);
 			return;
 		}
-		/*
-		// Do something with the data in args.Snapshot
-		var highscoreobject = args.Snapshot.Value as Dictionary<string, System.Object>;
-		//Debug.Log(args.Snapshot.Child("score").Value);
-		foreach (var item in highscoreobject)
-			guide_text.text = args.Snapshot;*/
+		message_snapshot = args.Snapshot;
+		messageButton.SetActive(true);
+		Debug.Log("New messages arrived.");
 	}
 
-	// 프로파일 눌렀을 때 DB 열람
-	public void OnClickProfile()
-	{
-		Read_Friends();
-		Read_Logs();
-	}
-
-	// 마이페이지 닫을 때
-	public void OnClickClosePage()
+	// 메세지 버튼을 누르면 메세지 패널 팝업
+    public void OnClickMessage()
     {
-		// 내부 프리팹 삭제
-		for (int i = 0; i < friend_parent.transform.childCount; i++)
+		messageButton.SetActive(false);
+		messagePanel.SetActive(true);
+		foreach (DataSnapshot data in message_snapshot.Children) // 우선 초대 메세지는 하나만 온다고 가정
 		{
-			Destroy(friend_parent.transform.GetChild(i).gameObject);
+			IDictionary item = (IDictionary)data.Value;
+			key = data.Key;
+			room = item["content"].ToString();
+			contentText.GetComponent<Text>().text = string.Format("To. {0}\r\n\r\n우리 연습게임하자.\r\n방(\"{1}\")으로 들어와!\r\n\r\nFrom. {2}", item["receiver"].ToString(), room, item["sender"].ToString());
 		}
-		for (int i = 0; i < log_parent.transform.childCount; i++)
-        {
-			Destroy(log_parent.transform.GetChild(i).gameObject);
-		}
-
-		// 스크롤 비활성화
-		friendsScroll.SetActive(false);
-		logsScroll.SetActive(false);
-
-		myFriendButton.interactable = false;
-		myLogButton.interactable = false;
-
 	}
 
+	// 해당 초대메세지 수락 시
+	public void OnClickYesOnMessage()
+	{
+		roomInput.GetComponent<InputField>().text = room;
+		nickNameInput.GetComponent<InputField>().text = AuthManager.User.DisplayName;
+		deleteMessage();
+		waitingPanel.SetActive(true);
+	}
+
+	// 해당 초대메세지DB 삭제
+	public void deleteMessage()
+	{
+		FirebaseDatabase.DefaultInstance.GetReference("messages/"+key).RemoveValueAsync();
+	}
+
+	// -----------------------------------------
+	// 마이페이지에서,
+	// 개인정보 수정 패널 열 때
+	public void OnClickEdit()
+    {
+		editPanel.SetActive(true);
+    }
+
+	// 개인정보 수정 패널 닫을 때
+	public void OnClickCloseEdit()
+    {
+		editPanel.SetActive(false);
+	}
+
+	//-------------------------------------------
 	// 친구목록 버튼 눌렀을 때
 	public void OnClickFriends()
 	{
@@ -185,5 +227,28 @@ public class MyPageTest : MonoBehaviour
 				Debug.Log("Success to read logs from DB.");
 			}
 		});
+	}
+
+	//----------------------------------------------
+	// 마이페이지 닫을 때
+	public void OnClickClosePage()
+	{
+		// 내부 프리팹 삭제
+		for (int i = 0; i < friend_parent.transform.childCount; i++)
+		{
+			Destroy(friend_parent.transform.GetChild(i).gameObject);
+		}
+		for (int i = 0; i < log_parent.transform.childCount; i++)
+		{
+			Destroy(log_parent.transform.GetChild(i).gameObject);
+		}
+
+		// 스크롤 비활성화
+		friendsScroll.SetActive(false);
+		logsScroll.SetActive(false);
+
+		myFriendButton.interactable = false;
+		myLogButton.interactable = false;
+
 	}
 }

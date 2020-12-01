@@ -113,6 +113,10 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
         guide_panel.SetActive(true);
         State_text.SetActive(true);
         UIManager.instance.set_notice_Turn(1);   //보안관 차례임을 미니맵에 표시
+
+        // 각 사용자에게게 현 보드게임 이름 등록하고 DB에 로그 저장
+        BoardName.Name_Scene = PhotonNetwork.CurrentRoom.CustomProperties["BoardName"].ToString();
+        LogRecord.AddLog_pg();
     }
 
     [PunRPC]

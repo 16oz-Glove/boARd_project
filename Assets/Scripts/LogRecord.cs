@@ -12,6 +12,7 @@ public class LogRecord : MonoBehaviour
         AddLog_tt();
     }
 
+    // 튜토리얼 로그 저장
     private void AddLog_tt()
     {
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
