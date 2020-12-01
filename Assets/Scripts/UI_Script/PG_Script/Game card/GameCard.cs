@@ -9,6 +9,7 @@ public class GameCard : MonoBehaviour  //게임카드들의 부모 클래스 (�
     private GameObject use_Button;  // '사용' 버튼
     public static GameObject game_obj;     //카드 인식하면 나타나는 3D오브젝트
     public static GameObject game_obj2;
+    protected GameObject minimap;     //미니맵 버튼
 
     PlayerSet playerSet;
     UIManager instance;
@@ -16,7 +17,8 @@ public class GameCard : MonoBehaviour  //게임카드들의 부모 클래스 (�
 
     void Awake()
     {
-        use_Button = GameObject.Find("Panel").transform.Find("use_Button").gameObject;
+        use_Button = GameObject.Find("Canvas").transform.Find("Panel").transform.Find("use_Button").gameObject;
+        minimap = GameObject.Find("Canvas").transform.Find("Panel").transform.Find("Minimap").gameObject;
     }
 
     // Start is called before the first frame update
@@ -61,7 +63,6 @@ public class GameCard : MonoBehaviour  //게임카드들의 부모 클래스 (�
         }
 
     }
-
 
     protected void Update_Object()
     {

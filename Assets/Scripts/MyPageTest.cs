@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Firebase;
@@ -11,14 +11,15 @@ public class MyPageTest : MonoBehaviour
 	public GameObject myPagePanel;
 	public GameObject friendsScroll;
 	public GameObject logsScroll;
+	public Text guide_text;
 
 	public Button myLogButton;
 	public Button myFriendButton;
 
-	public GameObject friend_prefab = null;
-	public GameObject friend_parent = null;
-	public GameObject log_prefab = null;
-	public GameObject log_parent = null;
+	public GameObject friend_prefab;
+	public GameObject friend_parent;
+	public GameObject log_prefab;
+	public GameObject log_parent;
 
 	private DataSnapshot log_snapshot = null;
 	private DataSnapshot friend_snapshot = null;
@@ -26,7 +27,6 @@ public class MyPageTest : MonoBehaviour
 	void Start()
     {
 		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://test-board-1158b.firebaseio.com/");
-		DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
 
 		myPagePanel.SetActive(false);
 		friendsScroll.SetActive(false);
@@ -36,11 +36,44 @@ public class MyPageTest : MonoBehaviour
 		myLogButton.interactable = false;
 	}
 
+	// 초대 메세지 확인
+	private void CheckMessage()
+    {
+		FirebaseDatabase.DefaultInstance.GetReference("Leaders").GetValueAsync().ContinueWith(task => {
+			if (task.IsFaulted)
+			{
+				// Handle the error...
+			}
+			else if (task.IsCompleted)
+			{
+				DataSnapshot snapshot = task.Result;
+				// Do something with snapshot...
+			}
+		 });
+
+		FirebaseDatabase.DefaultInstance.GetReference("messages").OrderByChild("receiver").EqualTo(AuthManager.User.DisplayName).ChildAdded += HandleChildAdded;
+	}
+
+	private void HandleChildAdded(object sender, ChildChangedEventArgs args)
+	{
+		if (args.DatabaseError != null)
+		{
+			Debug.LogError(args.DatabaseError.Message);
+			return;
+		}
+		/*
+		// Do something with the data in args.Snapshot
+		var highscoreobject = args.Snapshot.Value as Dictionary<string, System.Object>;
+		//Debug.Log(args.Snapshot.Child("score").Value);
+		foreach (var item in highscoreobject)
+			guide_text.text = args.Snapshot;*/
+	}
+
 	// 프로파일 눌렀을 때 DB 열람
 	public void OnClickProfile()
-    {
-		ReadFriendsData();
-		ReadLogsData();
+	{
+		Read_Friends();
+		Read_Logs();
 	}
 
 	// 마이페이지 닫을 때
@@ -78,8 +111,8 @@ public class MyPageTest : MonoBehaviour
 				GameObject go = Instantiate(friend_prefab, transform.position, transform.rotation);
 				go.transform.SetParent(friend_parent.transform);
 
-				IDictionary logs = (IDictionary)data.Value;
-				go.transform.Find("friendName").GetComponent<Text>().text = logs["name"].ToString();
+				IDictionary friend = (IDictionary)data.Value;
+				go.transform.Find("friendName").GetComponent<Text>().text = friend["name"].ToString();
 			}
 		}
 	}
@@ -116,8 +149,8 @@ public class MyPageTest : MonoBehaviour
         }
 	}
 
-	// DB에서 친구정보 읽어오기
-	private void ReadFriendsData()
+	// DB에서 친구 목록 읽어오기
+	private void Read_Friends()
 	{
 		string key = AuthManager.User.UserId;
 		FirebaseDatabase.DefaultInstance.GetReference("users/" + key + "/friends").GetValueAsync().ContinueWith(task =>
@@ -136,7 +169,7 @@ public class MyPageTest : MonoBehaviour
 	}
 
 	// DB에서 로그 기록 읽어오기
-	private void ReadLogsData()
+	private void Read_Logs()
 	{
 		string key = AuthManager.User.UserId;
 		FirebaseDatabase.DefaultInstance.GetReference("logs/" + key).GetValueAsync().ContinueWith(task =>
@@ -153,5 +186,4 @@ public class MyPageTest : MonoBehaviour
 			}
 		});
 	}
-
 }

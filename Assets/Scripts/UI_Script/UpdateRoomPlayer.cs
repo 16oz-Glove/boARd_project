@@ -21,8 +21,12 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
 
     [Header("게임시작캔버스")]
     public GameObject panel;
+
     [Header("가이드캔버스")]
     public GameObject guide_panel;
+
+    [Header("사용자 상태/명력 텍스트")]
+    public GameObject State_text;    // 미니맵 중앙에 알림 표시할 부분
 
     void Awake()
     {
@@ -37,7 +41,7 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
         Startbutton.interactable = false;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         //입장한 사람들의 수가 로비의 최대 인원수와 같다면
         if (PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
@@ -58,7 +62,6 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         RoomRenewal();
-        photonView.RPC("GameStartRPC", RpcTarget.All);
     }
 
     public override void OnPlayerEnteredRoom(Player other)
@@ -100,6 +103,7 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
     public void Button_GameStart()
     {
         photonView.RPC("GameStartRPC", RpcTarget.All);
+        UIManager.instance.Player1_Turn1_Text();    //사용자1 화면 업데이트 해주기
     }
 
     [PunRPC]
@@ -107,7 +111,8 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
     {
         panel.SetActive(false);
         guide_panel.SetActive(true);
-        UIManager.instance.set_notice_Turn(1);   //보안관 차례임을 표시
+        State_text.SetActive(true);
+        UIManager.instance.set_notice_Turn(1);   //보안관 차례임을 미니맵에 표시
     }
 
     [PunRPC]
@@ -116,9 +121,5 @@ public class UpdateRoomPlayer : MonoBehaviourPunCallbacks
         Nownum.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();    // 방에 입장해 있는 현재 인원 수
         Allnum.text = PhotonNetwork.CurrentRoom.MaxPlayers.ToString();     // 최대 인원수
     }
-
-
-
-
 
 }

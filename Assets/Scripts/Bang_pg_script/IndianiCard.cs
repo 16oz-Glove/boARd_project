@@ -17,10 +17,7 @@ public class IndianiCard : Card_event
     protected override void Update_animator()
     {
         animator1 = GameObject.Find("Bang/Ch_VULTURESAM/Rinnegato").GetComponent<Animator>();
-        animator3 = GameObject.Find("Bang/Ch_JOURDONNAIS/Rinnegato").GetComponent<Animator>();
-        animator5 = GameObject.Find("Bang/Ch_ELGRINGO/Rinnegato").GetComponent<Animator>();
-        animator7 = GameObject.Find("Bang/Ch_WILLYTHEKID/Rinnegato").GetComponent<Animator>();
-        animator9 = GameObject.Find("Bang/Ch_SIDKETCHUM/Rinnegato").GetComponent<Animator>();
+
 
     }
 
@@ -36,7 +33,7 @@ public class IndianiCard : Card_event
 
     protected override void Update_Player()
     {
-
+        UIManager.instance.Player3_To_Indian_all(); //다른 사용자들에게 indiancard 패널 띄우기
     }
 
 }

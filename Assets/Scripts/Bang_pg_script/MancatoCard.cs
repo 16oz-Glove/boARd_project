@@ -17,10 +17,7 @@ public class MancatoCard : Card_event
     protected override void Update_animator()
     {
         animator1 = GameObject.Find("Bang/Ch_VULTURESAM/Rinnegato").GetComponent<Animator>();
-        animator3 = GameObject.Find("Bang/Ch_JOURDONNAIS/Rinnegato").GetComponent<Animator>();
-        animator5 = GameObject.Find("Bang/Ch_ELGRINGO/Rinnegato").GetComponent<Animator>();
-        animator7 = GameObject.Find("Bang/Ch_WILLYTHEKID/Rinnegato").GetComponent<Animator>();
-        animator9 = GameObject.Find("Bang/Ch_SIDKETCHUM/Rinnegato").GetComponent<Animator>();
+
 
     }
 
@@ -34,9 +31,10 @@ public class MancatoCard : Card_event
         stateName = "dodging";
     }
 
+    //플레이어 4가 빗나감 카드를 사용함
     protected override void Update_Player()
     {
-
+        UIManager.instance.Player4_to_Mantaco();
     }
 
 }

@@ -16,11 +16,7 @@ public class CatBalouCard : Card_event
 
     protected override void Update_animator()
     {
-        animator1 = GameObject.Find("Bang/Ch_VULTURESAM/Rinnegato").GetComponent<Animator>();
-        animator3 = GameObject.Find("Bang/Ch_JOURDONNAIS/Rinnegato").GetComponent<Animator>();
-        animator5 = GameObject.Find("Bang/Ch_ELGRINGO/Rinnegato").GetComponent<Animator>();
-        animator7 = GameObject.Find("Bang/Ch_WILLYTHEKID/Rinnegato").GetComponent<Animator>();
-        animator9 = GameObject.Find("Bang/Ch_SIDKETCHUM/Rinnegato").GetComponent<Animator>();
+        animator1 = GameObject.Find("Bang/CatBalou_card_DiaJ/CatBalou@Idle").GetComponent<Animator>();
 
     }
 
@@ -36,7 +32,8 @@ public class CatBalouCard : Card_event
 
     protected override void Update_Player()
     {
-
+        Debug.Log("캣벌로우 카드 효과 발동");
+        UIManager.instance.Player_Action__State_Please("바로 오른쪽 사람에게 \"캣 벌루오\"카드를 사용해 보겠습니다.\n 미니맵에서 오른쪽 사용자의 오브젝트를 터치해 주세요.");
     }
 
 }

@@ -25,8 +25,21 @@ public class PlayerButton : MonoBehaviourPun
     //뱅에 맞았을때 실행되게 하기
     public void BangTarget_Player()
     {
-        useforRPC.Minus_life(1);        //뱅에 맞았으므로, 생명력 줄여주고
-        photonView.RPC("BangTarget_RPC", RpcTarget.All); //화면에 업데이트
+        if (UIManager.instance.Player_Turn == 1)
+        {
+            useforRPC.Minus_life(1);        //뱅에 맞았으므로, 생명력 줄여주고
+        }
+        else if (UIManager.instance.Player_Turn == 2)
+        {
+            useforRPC.Minus_life(1);
+            UIManager.instance.Player2_Mirino();
+        }
+        else return;
+    }
+
+    public void click_Button()
+    {
+        UIManager.instance.Player1_To_Player5();
     }
 
 }

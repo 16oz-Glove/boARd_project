@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Mainmenu.unity
     guid: 7af94f1c405871544842c4bcb63a314e
   - enabled: 1
-    path: Assets/Scenes/Lobby.unity
-    guid: 5ce8703fe7c114618a557abc1b45f9fb
-  - enabled: 1
     path: Assets/Scenes/ARrecognize.unity
     guid: 814ad92204d2b234c805591fa1fa4bce
   - enabled: 1
@@ -26,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bang_tt.unity
     guid: 81db9b605f2544c48b42bdbd1c1f4222
+  - enabled: 1
+    path: Assets/Scenes/New Scene.unity
+    guid: 97b568e5babd7cd479a92ea8ddad7aae
   m_configObjects: {}

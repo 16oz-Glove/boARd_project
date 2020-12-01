@@ -9,23 +9,13 @@ public class Card_event : MonoBehaviour
     string boxContent;
     protected GameObject plane;
     protected GameObject model1;
-    protected GameObject model2;
-    protected GameObject model3;
-    protected GameObject model4;
-    protected GameObject model5;
     protected Animator animator1;
     protected Animator animator2;
-    protected Animator animator3;
-    protected Animator animator4;
-    protected Animator animator5;
-    protected Animator animator6;
-    protected Animator animator7;
-    protected Animator animator8;
-    protected Animator animator9;
-    protected Animator animator10;
     protected AudioSource source;
     protected string stateName;
     protected string stateName2;
+    protected GameObject minimap;
+    protected GameObject Panel_useCardModal;
 
     void Start()
     {
@@ -37,6 +27,9 @@ public class Card_event : MonoBehaviour
         Update_animation();
         Update_animation2();
         Thread.Sleep(100);
+
+        minimap = GameObject.Find("Canvas").transform.Find("Panel").transform.Find("Minimap").gameObject;   //미니맵 넣어주기
+        Panel_useCardModal = GameObject.Find("Canvas").transform.Find("Panel_useCardModal").gameObject;     //카드 사용하시겠습니까? 패널
     }
 
     void Update()
@@ -62,10 +55,6 @@ public class Card_event : MonoBehaviour
                     if (model1)
                     {
                         model1.SetActive(true);
-                        model2.SetActive(true);
-                        model3.SetActive(true);
-                        model4.SetActive(true);
-                        model5.SetActive(true);
                     }
 
                     if (animator1)
@@ -73,29 +62,9 @@ public class Card_event : MonoBehaviour
                     if (animator2)
                         animator2.Play(stateName2, -1, 0);
 
-                    if (animator3)
-                        animator3.Play(stateName, -1, 0);
-                    if (animator4)
-                        animator4.Play(stateName2, -1, 0);
-
-                    if (animator5)
-                        animator5.Play(stateName, -1, 0);
-                    if (animator6)
-                        animator6.Play(stateName2, -1, 0);
-
-                    if (animator7)
-                        animator7.Play(stateName, -1, 0);
-                    if (animator8)
-                        animator8.Play(stateName2, -1, 0);
-
-                    if (animator9)
-                        animator9.Play(stateName, -1, 0);
-                    if (animator10)
-                        animator10.Play(stateName2, -1, 0);
-
-                    if (source)
+                    if (source) //오디오 소스가 존재하면 플레이 하고
                         source.Play();
-                    Update_Player();
+                    Update_Player();    //플레이어 업데이트 --> 여기에 민지씨꺼 추가하면 될듯
                 }
                 gDraw = true;
             }
@@ -109,17 +78,6 @@ public class Card_event : MonoBehaviour
         }
 
     }
-    /*
-    void OnGUI()
-    {
-        boxContent = "이름\r\n" + gameObject.name;    //오브젝트 이름
-
-        if (gDraw == true)
-        {
-            GUI.Box(new Rect(10, 10, 100, 100), boxContent);
-        }
-    }
-    */
     protected virtual void Update_plane()
     {
 
