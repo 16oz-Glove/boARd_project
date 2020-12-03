@@ -19,7 +19,6 @@ public class UpdateNum : MonoBehaviourPunCallbacks
     [Header("PlayerList")]
     public Text[] PlayerList;   //플레이어들이 뜰 텍스트 리스트
 
-
     void Awake()
     {
         RoomName.text = PhotonNetwork.CurrentRoom.Name; //방제목 넣어주고

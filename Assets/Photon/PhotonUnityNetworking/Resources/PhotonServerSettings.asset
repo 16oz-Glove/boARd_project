@@ -42,6 +42,25 @@ MonoBehaviour:
   - AllRoomRenewal
   - AllRoomRenewalRPC
   - GameStartRPC
+  - AnimatorEditRPC
+  - RenewalRPC
+  - NextTurnRPC
+  - positioningRPC
+  - reNameRPC
+  - Set_noticeRPC
+  - Set_Player_buttonRPC
+  - setAnounce_TurnRPC
+  - Palyer2_Duo_RPC
+  - Player_Action_Please_All_RPC
+  - Player_Action_RPC
+  - Player_Active_Mancato_RPC
+  - Player1_To_Player4_and_Player3_To_Player4_RPC
+  - Player1_To_Player5_RPC
+  - Player2_Start_RPC
+  - Player2_To_Player1_RPC
+  - Player3_to_all_Indian_RPC
+  - Player4_Prigione_Card
+  - Update_Life_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

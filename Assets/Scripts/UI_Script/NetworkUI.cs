@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using Photon.Realtime;
 
-public class NetworkUI : MonoBehaviourPun
+public class NetworkUI : MonoBehaviourPunCallbacks
 {
     //현재 이 스키립트를 실행하고 있는 User가 호스트(방장) 인가?
     public bool IsMasterClientLocal;
@@ -15,6 +16,9 @@ public class NetworkUI : MonoBehaviourPun
     void Awake()
     {
         IsMasterClientLocal = PhotonNetwork.IsMasterClient;
+        // 플레이어 수에 따라 변경되는 경기장 세팅에 사용. true면 Master클라이언트에서 LoadLevel()을 호출할 수 있다.
+        // 이때 방의 모든 클라이언트가 마스터 클라이언트와 동일한 레벨을 자동으로 로드함. 즉 true시 레벨 동기화.
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     public void Update()
@@ -27,7 +31,8 @@ public class NetworkUI : MonoBehaviourPun
                 TimeCost -= Time.deltaTime;
                 Now.text = TimeCost.ToString("N1") + "초 뒤 자동으로 \n 연습게임으로 이동합니다.";
                 //10초뒤에 씬 이동
-                StartCoroutine(Count());
+                if (IsMasterClientLocal)    //호스트면
+                    StartCoroutine(Count());    // 10초뒤 게임시작
             }
             
         }
@@ -44,24 +49,17 @@ public class NetworkUI : MonoBehaviourPun
         }
     }
 
-
-    public void GameStart()
-    {
-        GameStartRPC();
-    }
-
     IEnumerator Count()
     {
         yield return new WaitForSeconds(10.0f);
-        PhotonNetwork.LoadLevel("Bang_pg");
+        //PhotonNetwork.LoadLevel("Bang_pg");
+        PhotonNetwork.LoadLevel("New Scene");
         TimeCost = 10.0f;
     }
 
-
-    [PunRPC]//RPC는 플레이어가 속해있는 방 모든 인원에게 전달한다
-    void GameStartRPC()
+    private void GetCurrentRoomPlayers()
     {
-        PhotonNetwork.LoadLevel("Bang_pg");    //동기화가 자동으로됨.
+
     }
 
 }

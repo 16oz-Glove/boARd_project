@@ -121,7 +121,7 @@ public class Join : MonoBehaviour
     }
 
     // FirebaseAuth에 사용자 이름 등록
-    public void UpdateUserName(FirebaseUser newUser)
+    private void UpdateUserName(FirebaseUser newUser)
     {
         UserProfile profile = new UserProfile { DisplayName = nickNameField.text };
         newUser.UpdateUserProfileAsync(profile).ContinueWith(task => {

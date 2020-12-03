@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;       //MonoBehaviourPunCallbacks 상속을 위한 using
 using Photon.Realtime;  //MonoBehaviourPunCallbacks 상속을 위한 using
 using UnityEngine.UI;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
@@ -30,7 +31,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.GameVersion = gameVersion;
         StatusText.text = "마스터 서버 접속 중...";
         PhotonNetwork.ConnectUsingSettings();        // 마스터 서버에 접속을 성공하면, 밑에 OnConnectedToMaster() 메서드가 자동으로 실행됨.
-
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     //'방 만들기 버튼을 눌렀을때 실행될 메서드'
@@ -44,8 +45,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             PhotonNetwork.LocalPlayer.NickName = NickNameInput.text;    //유저 닉네임 입력한 부분을 등록
             joinButton.interactable = false;    //서버에 접속이 성공하면 비활성화.
             StatusText.text = "방을 만드는 중입니다...";
+
             // 방장이 입력한 방 제목과, 최대 인원수를 가진 방을 생성.
-            PhotonNetwork.CreateRoom(roomInput.text, new RoomOptions { MaxPlayers = MaxplayerNum });
+            RoomOptions roomOption = new RoomOptions();
+            roomOption.MaxPlayers = MaxplayerNum;
+            roomOption.CustomRoomProperties = new Hashtable() { { "BoardName", BoardName.Name_Scene } };
+            PhotonNetwork.CreateRoom(roomInput.text, roomOption);
         }
         else        //잘 접속이 되지 않았다면
         {
@@ -127,7 +132,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         StatusText.text = "방에 입장합니다.";
         //SceneManager.LoadScene(); 으로 이동하면 안됨. 동기화가 전혀 안됨. 독자적으로 자기 세계에서만 씬을 이동함.
-        PhotonNetwork.LoadLevel("Lobby");    //동기화가 자동으로됨.
+        PhotonNetwork.LoadLevel("New Scene");    //동기화가 자동으로됨.
     }
 
 
