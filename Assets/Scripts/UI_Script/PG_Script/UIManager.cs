@@ -453,7 +453,7 @@ public class UIManager : MonoBehaviourPun
     {
         photonView.RPC("Player3_to_all_Indian_RPC", RpcTarget.Others);
         check_Qution.SetActive(true);   //  다음턴으로 넘기겠습니다.패널 띄우기
-        Player4_Prigione_Card();    //플레이어 4 화면에는 감옥카드 띄워주기
+        photonView.RPC("Player4_Prigione_Card",RpcTarget.All);    //플레이어 4 화면에는 감옥카드 띄워주기
     }
     
     public void Player4_To_No_Button()
@@ -480,6 +480,7 @@ public class UIManager : MonoBehaviourPun
     {
         GetComponent<PlayerSet>().Minus_life(1);
     }
+
 
     public void Rirra_OK_Button()
     {
