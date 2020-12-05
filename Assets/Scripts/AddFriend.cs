@@ -25,12 +25,6 @@ public class AddFriend : MonoBehaviour
         completePanel.SetActive(false);
     }
 
-    // 마이페이지에서 add 버튼 눌렀을 때 패널 활성화
-    public void OnClickAddOfMypage()
-    {
-        addFriendPanel.SetActive(true);
-    }
-
     // 검색하기 버튼 눌렀을 경우
     public void OnClickSearch()
     {

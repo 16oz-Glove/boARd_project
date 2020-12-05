@@ -4,8 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class LogOut : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void OnClickLogOut()
+    public static void OnClickLogOut()
     {
         AuthManager.firebaseAuth.SignOut();
         AuthManager.User = null;

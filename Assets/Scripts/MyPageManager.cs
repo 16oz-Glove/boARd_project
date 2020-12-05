@@ -5,7 +5,7 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 
-public class MyPageTest : MonoBehaviour
+public class MyPageManager : MonoBehaviour
 {
 	// 메인화면 오브젝트
 	public GameObject messageButton;
@@ -16,7 +16,6 @@ public class MyPageTest : MonoBehaviour
 
 	// 마이페이지 오브젝트
 	public GameObject myPagePanel;
-	public GameObject editPanel;
 	public Button myLogButton;
 	public Button myFriendButton;
 	public GameObject friendsScroll;
@@ -54,7 +53,6 @@ public class MyPageTest : MonoBehaviour
 	{
 		friendsScroll.SetActive(false);
 		logsScroll.SetActive(false);
-		editPanel.SetActive(false);
 
 		myFriendButton.interactable = false;
 		myLogButton.interactable = false;
@@ -137,13 +135,6 @@ public class MyPageTest : MonoBehaviour
 
 	//----------------------------------------------------------------------
 	// 마이페이지에서,
-	// 개인정보 수정 패널 열 때
-	public void OnClickEdit()
-	{
-		editPanel.SetActive(true);
-	}
-
-	//----------------------------------------------------------------------
 	// 친구목록 버튼 눌렀을 때
 	public void OnClickFriends()
 	{
@@ -198,7 +189,6 @@ public class MyPageTest : MonoBehaviour
 	// DB에서 친구 목록 읽어오기
 	private void Read_Friends()
 	{
-		Debug.Log("Started to read friends.");
 		string key = AuthManager.User.UserId;
 		FirebaseDatabase.DefaultInstance.GetReference("users/" + key + "/friends").GetValueAsync().ContinueWith(task =>
 		{
@@ -218,7 +208,6 @@ public class MyPageTest : MonoBehaviour
 	// DB에서 로그 기록 읽어오기
 	private void Read_Logs()
 	{
-		Debug.Log("Started to read logs.");
 		string key = AuthManager.User.UserId;
 		FirebaseDatabase.DefaultInstance.GetReference("logs/" + key).GetValueAsync().ContinueWith(task =>
 		{
