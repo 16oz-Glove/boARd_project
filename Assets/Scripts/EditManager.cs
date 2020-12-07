@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using Firebase.Database;
 using Firebase.Auth;
-
+using UnityEngine.SceneManagement;
 
 public class EditManager : MonoBehaviour
 {
@@ -159,6 +159,9 @@ public class EditManager : MonoBehaviour
     // 변경 완료 시, 재접속 요청(로그아웃)
     public void OnClickOkay()
     {
-        LogOut.OnClickLogOut();
+        AuthManager.firebaseAuth.SignOut();
+        AuthManager.User = null;
+        SceneManager.LoadScene("SignIn");
+        Debug.Log("Log-out");
     }
 }

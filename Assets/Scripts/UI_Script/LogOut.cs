@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class LogOut : MonoBehaviour
 {
-    public static void OnClickLogOut()
+    public void OnClickLogOut()
     {
         AuthManager.firebaseAuth.SignOut();
         AuthManager.User = null;
