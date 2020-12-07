@@ -5,7 +5,7 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 
-public class MyPageTest : MonoBehaviour
+public class MyPageManager : MonoBehaviour
 {
 	// 메인화면 오브젝트
 	public GameObject messageButton;
@@ -16,7 +16,6 @@ public class MyPageTest : MonoBehaviour
 
 	// 마이페이지 오브젝트
 	public GameObject myPagePanel;
-	public GameObject editPanel;
 	public Button myLogButton;
 	public Button myFriendButton;
 	public GameObject friendsScroll;
@@ -30,18 +29,21 @@ public class MyPageTest : MonoBehaviour
 	private string key = null;
 	private string room = null;
 	private DataSnapshot message_snapshot = null;
-	private DataSnapshot log_snapshot = null;
-	private DataSnapshot friend_snapshot = null;
+	private DataSnapshot log_snapshot;
+	private DataSnapshot friend_snapshot;
 
 	// 메인화면 초기화
 	void Start()
-    {
+	{
 		messageButton.SetActive(false);
 		messagePanel.SetActive(false);
 		waitingPanel.SetActive(false);
 		myPagePanel.SetActive(false);
 
-		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://test-board-1158b.firebaseio.com/");
+		log_snapshot = null;
+		friend_snapshot = null;
+
+	FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://test-board-1158b.firebaseio.com/");
 		CheckMessage(); // 초대 메세지 온 거 있는지 확인
 	}
 
@@ -51,7 +53,6 @@ public class MyPageTest : MonoBehaviour
 	{
 		friendsScroll.SetActive(false);
 		logsScroll.SetActive(false);
-		editPanel.SetActive(false);
 
 		myFriendButton.interactable = false;
 		myLogButton.interactable = false;
@@ -61,6 +62,7 @@ public class MyPageTest : MonoBehaviour
 		Read_Logs();
 	}
 
+	//----------------------------------------------------------------------
 	// 초대 메세지 확인
 	private void CheckMessage()
 	{
@@ -71,11 +73,10 @@ public class MyPageTest : MonoBehaviour
 			}
 			else if (task.IsCompleted)
 			{
-				if (task.Result != null)
-                {
+				if (task.Result.Value != null) // DataSnapshot은 null이 없다!!!
+				{
 					message_snapshot = task.Result;
 					messageButton.SetActive(true);
-					Debug.Log("New messages arrived.");
 				}
 			}
 		});
@@ -91,23 +92,27 @@ public class MyPageTest : MonoBehaviour
 			Debug.LogError(args.DatabaseError.Message);
 			return;
 		}
-		message_snapshot = args.Snapshot;
-		messageButton.SetActive(true);
-		Debug.Log("New messages arrived.");
+		if (args.Snapshot != null)
+		{
+			message_snapshot = args.Snapshot;
+			messageButton.SetActive(true);
+			Debug.Log("New messages arrived.");
+		}
 	}
 
 	// 메세지 버튼을 누르면 메세지 패널 팝업
-    public void OnClickMessage()
-    {
-		messageButton.SetActive(false);
-		messagePanel.SetActive(true);
+	public void OnClickMessage()
+	{
 		foreach (DataSnapshot data in message_snapshot.Children) // 우선 초대 메세지는 하나만 온다고 가정
 		{
 			IDictionary item = (IDictionary)data.Value;
 			key = data.Key;
 			room = item["content"].ToString();
+			Debug.Log(key + ": Invitation to room name, " + room);
 			contentText.GetComponent<Text>().text = string.Format("To. {0}\r\n\r\n우리 연습게임하자.\r\n방(\"{1}\")으로 들어와!\r\n\r\nFrom. {2}", item["receiver"].ToString(), room, item["sender"].ToString());
 		}
+		messageButton.SetActive(false);
+		messagePanel.SetActive(true);
 	}
 
 	// 해당 초대메세지 수락 시
@@ -122,24 +127,14 @@ public class MyPageTest : MonoBehaviour
 	// 해당 초대메세지DB 삭제
 	public void deleteMessage()
 	{
-		FirebaseDatabase.DefaultInstance.GetReference("messages/"+key).RemoveValueAsync();
+		if (key != null)
+		{
+			FirebaseDatabase.DefaultInstance.GetReference("messages/" + key).RemoveValueAsync();
+		}
 	}
 
-	// -----------------------------------------
+	//----------------------------------------------------------------------
 	// 마이페이지에서,
-	// 개인정보 수정 패널 열 때
-	public void OnClickEdit()
-    {
-		editPanel.SetActive(true);
-    }
-
-	// 개인정보 수정 패널 닫을 때
-	public void OnClickCloseEdit()
-    {
-		editPanel.SetActive(false);
-	}
-
-	//-------------------------------------------
 	// 친구목록 버튼 눌렀을 때
 	public void OnClickFriends()
 	{
@@ -161,17 +156,17 @@ public class MyPageTest : MonoBehaviour
 
 	// 마이로그 버튼 눌렀을 때
 	public void OnClickLogs()
-    {
+	{
 		friendsScroll.SetActive(false);
 		logsScroll.SetActive(true);
-		
+
 		if (log_parent.transform.childCount == 0)
-        {
+		{
 			foreach (DataSnapshot data in log_snapshot.Children)
 			{
 				GameObject go = Instantiate(log_prefab, transform.position, transform.rotation);
 				go.transform.SetParent(log_parent.transform);
-			
+
 				IDictionary logs = (IDictionary)data.Value;
 				string date = logs["date"].ToString().Substring(4, 2) + "/" + logs["date"].ToString().Substring(6, 8) + " ";
 				if (logs["type"].Equals("tt"))
@@ -188,7 +183,7 @@ public class MyPageTest : MonoBehaviour
 					Debug.Log("Wrong game type in DB");
 				}
 			}
-        }
+		}
 	}
 
 	// DB에서 친구 목록 읽어오기
@@ -203,9 +198,9 @@ public class MyPageTest : MonoBehaviour
 			}
 			else if (task.IsCompleted)
 			{
+				Debug.Log("Success to read friends from DB.");
 				friend_snapshot = task.Result;
 				myFriendButton.interactable = true;
-				Debug.Log("Success to read friends from DB.");
 			}
 		});
 	}
@@ -222,9 +217,9 @@ public class MyPageTest : MonoBehaviour
 			}
 			else if (task.IsCompleted)
 			{
+				Debug.Log("Success to read logs from DB.");
 				log_snapshot = task.Result;
 				myLogButton.interactable = true;
-				Debug.Log("Success to read logs from DB.");
 			}
 		});
 	}
