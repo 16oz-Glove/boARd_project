@@ -43,7 +43,7 @@ public class MyPageManager : MonoBehaviour
 		log_snapshot = null;
 		friend_snapshot = null;
 
-	FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://test-board-1158b.firebaseio.com/");
+		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://test-board-1158b.firebaseio.com/");
 		CheckMessage(); // 초대 메세지 온 거 있는지 확인
 	}
 

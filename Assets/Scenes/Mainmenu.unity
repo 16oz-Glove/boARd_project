@@ -5450,6 +5450,9 @@ GameObject:
   - component: {fileID: 93826602}
   - component: {fileID: 93826603}
   - component: {fileID: 93826604}
+  - component: {fileID: 93826605}
+  - component: {fileID: 93826607}
+  - component: {fileID: 93826606}
   m_Layer: 5
   m_Name: MyPage
   m_TagString: Untagged
@@ -5562,6 +5565,45 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &93826605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93826598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b70c59db436c14dafe3232caf7716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RegDate: {fileID: 1496877557}
+--- !u!114 &93826606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93826598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc186bd9b80335b4c9aa9ef381e90e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userEmail: {fileID: 605330823}
+--- !u!114 &93826607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93826598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda48a7bccf6b7349a23cdbbfb647762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userName: {fileID: 1921702311}
 --- !u!1 &103811554
 GameObject:
   m_ObjectHideFlags: 0
@@ -5646,6 +5688,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313592251}
         m_MethodName: OnClickButton_Active
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 93826605}
+        m_MethodName: OnClickEditPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7287,13 +7340,14 @@ GameObject:
   - component: {fileID: 313592251}
   - component: {fileID: 313592249}
   - component: {fileID: 313592250}
+  - component: {fileID: 313592254}
   m_Layer: 5
   m_Name: editing_Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &313592248
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7397,6 +7451,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313592247}
   m_CullTransparentMesh: 0
+--- !u!114 &313592254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313592247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc186bd9b80335b4c9aa9ef381e90e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userEmail: {fileID: 2124580085}
 --- !u!1 &315278413
 GameObject:
   m_ObjectHideFlags: 0
@@ -14259,6 +14326,7 @@ GameObject:
   - component: {fileID: 1328071176}
   - component: {fileID: 1328071175}
   - component: {fileID: 1328071174}
+  - component: {fileID: 1328071178}
   m_Layer: 5
   m_Name: lobby_panel
   m_TagString: Untagged
@@ -14358,6 +14426,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328071172}
   m_CullTransparentMesh: 0
+--- !u!114 &1328071178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328071172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8f092eaaeeb9146bdbc51eaa1e491d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userName: {fileID: 84297148}
 --- !u!1 &1330679834
 GameObject:
   m_ObjectHideFlags: 0
@@ -15644,7 +15725,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2020/11/19 16:05:55
+  m_Text: yyyy/mm/dd hh:mm:ss
 --- !u!222 &1496877558
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17230,11 +17311,8 @@ GameObject:
   - component: {fileID: 1777088395}
   - component: {fileID: 1777088393}
   - component: {fileID: 1777088394}
-  - component: {fileID: 1777088398}
-  - component: {fileID: 1777088397}
-  - component: {fileID: 1777088396}
   - component: {fileID: 1777088399}
-  - component: {fileID: 1777088400}
+  - component: {fileID: 1777088402}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -17411,45 +17489,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exitButton: {fileID: 249912019}
---- !u!114 &1777088396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777088389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc186bd9b80335b4c9aa9ef381e90e56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  userEmail: {fileID: 605330823}
---- !u!114 &1777088397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777088389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eda48a7bccf6b7349a23cdbbfb647762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  userName: {fileID: 1921702311}
---- !u!114 &1777088398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777088389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eda48a7bccf6b7349a23cdbbfb647762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  userName: {fileID: 1554219549}
 --- !u!114 &1777088399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17462,7 +17501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a196a3972a2d5418959108aef61765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1777088400
+--- !u!114 &1777088402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17471,10 +17510,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1777088389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc8f092eaaeeb9146bdbc51eaa1e491d, type: 3}
+  m_Script: {fileID: 11500000, guid: eda48a7bccf6b7349a23cdbbfb647762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userName: {fileID: 84297148}
+  userName: {fileID: 1554219549}
 --- !u!1 &1785146804
 GameObject:
   m_ObjectHideFlags: 0
@@ -19490,7 +19529,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: userEmail@ajou.ac.kr
+  m_Text: sample@ajou.ac.kr
 --- !u!222 &2124580086
 CanvasRenderer:
   m_ObjectHideFlags: 0

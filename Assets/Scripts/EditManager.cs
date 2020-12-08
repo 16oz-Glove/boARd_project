@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using Firebase.Database;
 using Firebase.Auth;
@@ -28,7 +29,7 @@ public class EditManager : MonoBehaviour
     public void OnClickSave()
     {
         // 변경 내용 없을 경우
-        if (new_pwCheckField.text == null && nickNameField.text == null)
+        if (new_pwCheckField.text.Length == 0 && nickNameField.text.Length == 0)
         {
             return;
         }
@@ -37,8 +38,9 @@ public class EditManager : MonoBehaviour
         currentPW = current_pwField.text;
         ReAuth();
 
-        if (new_pwCheckField.text != null) // 비밀번호 변경
+        if (new_pwCheckField.text.Length != 0) // 비밀번호 변경
         {
+            Debug.Log("new_pwCheckField.text is not null: "+ new_pwCheckField.text);
             if (new_pwField.text == new_pwCheckField.text)
             {
                 newPW = new_pwCheckField.text;
@@ -49,7 +51,7 @@ public class EditManager : MonoBehaviour
                 Debug.Log("Check the new password you input again.");
             }
         }
-        if (nickNameField.text != null) // 닉네임 변경
+        if (nickNameField.text.Length != 0) // 닉네임 변경
         {
             Invoke("ChangeNickName",1f);
         }
