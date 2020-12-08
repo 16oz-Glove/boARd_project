@@ -75,7 +75,11 @@ public class MyPageManager : MonoBehaviour
 			{
 				if (task.Result.Value != null) // DataSnapshot은 null이 없다!!!
 				{
-					message_snapshot = task.Result;
+					DataSnapshot temp = task.Result;
+					foreach (DataSnapshot data in temp.Children) // 우선 초대 메세지는 하나만 온다고 가정
+					{
+						message_snapshot = data;
+					}
 					messageButton.SetActive(true);
 				}
 			}
@@ -94,7 +98,7 @@ public class MyPageManager : MonoBehaviour
 		}
 		if (args.Snapshot != null)
 		{
-			message_snapshot = args.Snapshot;
+			message_snapshot = args.Snapshot; // 우선 초대 메세지는 하나만 온다고 가정
 			messageButton.SetActive(true);
 			Debug.Log("New messages arrived.");
 		}
@@ -103,14 +107,26 @@ public class MyPageManager : MonoBehaviour
 	// 메세지 버튼을 누르면 메세지 패널 팝업
 	public void OnClickMessage()
 	{
-		foreach (DataSnapshot data in message_snapshot.Children) // 우선 초대 메세지는 하나만 온다고 가정
+		string receiver = null;
+		string sender = null;
+		key = message_snapshot.Key;
+
+		foreach (DataSnapshot data in message_snapshot.Children)
 		{
-			IDictionary item = (IDictionary)data.Value;
-			key = data.Key;
-			room = item["content"].ToString();
-			Debug.Log(key + ": Invitation to room name, " + room);
-			contentText.GetComponent<Text>().text = string.Format("To. {0}\r\n\r\n우리 연습게임하자.\r\n방(\"{1}\")으로 들어와!\r\n\r\nFrom. {2}", item["receiver"].ToString(), room, item["sender"].ToString());
+			if (data.Key == "content")
+            {
+				room = data.Value.ToString();
+            }
+			if (data.Key == "receiver")
+			{
+				receiver = data.Value.ToString();
+			}
+			if (data.Key == "sender")
+			{
+				sender = data.Value.ToString();
+			}
 		}
+		contentText.GetComponent<Text>().text = string.Format("To. {0}\r\n\r\n우리 연습게임하자.\r\n방(\"{1}\")으로 들어와!\r\n\r\nFrom. {2}", receiver, room, sender);
 		messageButton.SetActive(false);
 		messagePanel.SetActive(true);
 	}
