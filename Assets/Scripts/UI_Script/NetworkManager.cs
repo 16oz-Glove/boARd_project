@@ -132,7 +132,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         StatusText.text = "방에 입장합니다.";
         //SceneManager.LoadScene(); 으로 이동하면 안됨. 동기화가 전혀 안됨. 독자적으로 자기 세계에서만 씬을 이동함.
-        PhotonNetwork.LoadLevel("New Scene");    //동기화가 자동으로됨.
+        PhotonNetwork.LoadLevel("Bang_pg");    //동기화가 자동으로됨.
     }
 
 
